@@ -97,9 +97,9 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-import my_rtd_theme
-html_theme = "my_rtd_theme"
-html_theme_path = [my_rtd_theme.get_html_theme_path()]
+#import my_rtd_theme
+#html_theme = "my_rtd_theme"
+#html_theme_path = [my_rtd_theme.get_html_theme_path()]
 
 #html_theme = 'openlmitheme'
 
