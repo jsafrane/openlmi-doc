@@ -1,7 +1,7 @@
 OpenLMI class reference
 =======================
 
-This is reference.
+This is reference with my theme.
 
 .. toctree::
     :maxdepth: 1
