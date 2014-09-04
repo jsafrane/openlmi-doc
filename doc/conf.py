@@ -97,6 +97,12 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
+print "My file:" , __file__
+import os
+path = os.path.dirname(__file__)
+print "My file:" , __file__, "path:", path
+sys.path.append(path)
+
 import my_rtd_theme
 html_theme = "my_rtd_theme"
 html_theme_path = [my_rtd_theme.get_html_theme_path()]
