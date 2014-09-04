@@ -1,6 +1,8 @@
 OpenLMI class reference
 =======================
 
+This is reference.
+
 .. toctree::
     :maxdepth: 1
     
