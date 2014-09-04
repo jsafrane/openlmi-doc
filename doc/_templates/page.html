@@ -1,5 +1,18 @@
 {% extends "!page.html" %}
 
-{% block footer %}
-<h1> hello world </h1>
+{% block toctree %}
+    <p> hello world </p>
+    {% set toctree = toctree(maxdepth=3, collapse=False, includehidden=True) %}
+    {% if toctree %}
+        {{ toctree }}
+    {% else %}
+        <!-- Local TOC -->
+        <p> unsuccessful build </p>
+        <div class="local-toc">{{ toc }}</div>
+    {% endif %}
+{% endblock %}
+
+
+{% block extrahead %}
+ <link rel="stylesheet" href="{{ pathto('_static/' + 'openlmi-custom.css', 1) }}" type="text/css" />
 {% endblock %}
