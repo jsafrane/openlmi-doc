@@ -33,11 +33,15 @@
 
   {% endif %}
 
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    <!-- before link -->
+    <link rel="stylesheet" href=" pathto('_static/css/my.css', 1) }}" type="text/css" />
+    <!-- after link -->
+
 
   {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {% endfor %}
+    <!-- after loop -->
 
   {%- block linktags %}
     {%- if hasdoc('about') %}
