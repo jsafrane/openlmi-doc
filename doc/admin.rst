@@ -1,5 +1,24 @@
-Configuration
-=============
+Administration
+==============
+
+Installation
+------------
+
+From source code
+^^^^^^^^^^^^^^^^
+
+Please refer to README of individual providers, either in git
+or in released tarballs.
+
+Fedora
+^^^^^^
+
+In Fedora Linux, one just needs to install OpenLMI packages:
+
+.. code-block:: bash
+
+    $ yum install openlmi-networking openlmi-storage <any other providers>
+
 
 Configuration files
 -------------------
@@ -16,11 +35,13 @@ providers in ``/etc/openlmi/openlmi.conf`` and different log levels
 for some providers in their configuration files.
 
 File format
------------
+^^^^^^^^^^^
 Configuration files has simple .ini syntax, with ``#`` or ``;`` used for
 comments.
 
-Default configuration::
+Default configuration:
+
+.. code-block:: ini
 
      [CIM]
      Namespace=root/cimv2
@@ -68,22 +89,11 @@ Default configuration::
 +---------+---------------------+-----------------------+-------------------------------------------------------------------+
 
 Treating boolean values
------------------------
-Options expecting boolean values treat following strings as valid ``True``
-values:
-
-    * ``true``
-    * ``1``
-    * ``yes``
-    * ``on``
-
-While the following are considered ``False``:
-
-    * ``false``
-    * ``0``
-    * ``no``
-    * ``off``
-
+^^^^^^^^^^^^^^^^^^^^^^^
+Options expecting boolean values treat following strings as valid *True*
+values: ``true``, ``1``, ``yes`` and ``on``.
+While the following are considered *False*: ``false``, ``0``, ``no`` and
+``off``.
 These words are checked in a case-insensitive way. Any other value isn't
 considered valid [1]_.
 
@@ -100,6 +110,46 @@ documentation how to enable tracing logs.
 
 With ``Stderr`` configuration option enabled, all logs are sent both to CIMOM
 and to the standard error output of the CIMOM.
+
+Logging in Pegasus
+^^^^^^^^^^^^^^^^^^
+
+When using Pegasus CIMOM, the easiest way is to let Pegasus daemon run in
+foreground and send log messages to its standard error output.
+
+Sample ``/etc/openlmi/openlmi.conf``:
+
+.. code-block:: ini
+
+    [CIM]
+    Namespace = root/cimv2
+    SystemClassName = PG_ComputerSystem
+
+    [Log]
+    Level = TRACE_INFO
+    Stderr = True
+
+Run Pegasus in foreground, i.e. with ``stderr`` output sent to terminal:
+
+.. code-block:: bash
+
+    $ /sbin/cimserver daemon=false
+    INFO:cimom_entry:get_providers:146 - Provider init.
+    INFO:TimerManager:_timer_loop:246 - Started Timer thread.
+    Level 8:cmpi_logging:trace_info:126 - Timer: Checking for expired, now=17634.607226.
+    Level 8:cmpi_logging:trace_info:126 - Timer: No timers scheduled, waiting forever.
+    INFO:cimom_entry:init_anaconda:118 - Initializing Anaconda
+    INFO:JobManager:_worker_main:877 - Started Job thread.
+
+Of course, more advanced logging can be configured in runtime to send provider
+logs into trace files, see
+`Pegasus documentation <http://cvs.opengroup.org/cgi-bin/viewcvs.cgi/*checkout*/pegasus/doc/TracingUserGuide.pdf>`_
+for details.
+
+.. note::
+
+    OpenLMI providers will start logging only after they are started, i.e.
+    when they are used for the first time. 
 
 -------------------------------------------------------------------------------
 
