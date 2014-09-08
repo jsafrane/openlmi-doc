@@ -1,5 +1,5 @@
-OpenLMI Networking Provider documentation
-=========================================
+Networking provider
+===================
 
 OpenLMI-Networking is CIM provider which manages local network devices.
 

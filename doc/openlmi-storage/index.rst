@@ -1,6 +1,5 @@
-
-OpenLMI Storage Provider documentation
-======================================
+Storage provider
+================
 
 OpenLMI-Storage is CIM provider which manages local block devices, i.e. block
 devices which are present in ``/dev/`` directory. This includes also attached

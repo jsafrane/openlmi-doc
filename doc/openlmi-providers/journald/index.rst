@@ -1,5 +1,5 @@
-OpenLMI Journald Provider documentation
-=======================================
+Journald provider
+=================
 
 OpenLMI Journald is a CIM provider exposing `systemd <http://freedesktop.org/wiki/Software/systemd/>`_
 journald log records and basic means of iteration and log writing.

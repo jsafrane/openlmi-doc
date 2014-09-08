@@ -1,5 +1,5 @@
-OpenLMI Power Management Provider Documentation
-===============================================
+Power Management provider
+=========================
 
 Contents:
 
