@@ -1,5 +1,5 @@
-Service provider
-================
+OpenLMI Service Provider documentation
+===========================================
 OpenLMI Service is CIM provider for managing Linux system services (using
 the systemd D-Bus interface).
 

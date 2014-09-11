@@ -1,7 +1,7 @@
 .. OpenLMI Hardware documentation
 
-Hardware provider
-=================
+OpenLMI Hardware Provider documentation
+=======================================
 OpenLMI Hardware is CIM provider which can provide hardware information.
 
 The provider is partially implementing DMTF Computer System Profile with

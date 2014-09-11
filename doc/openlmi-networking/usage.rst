@@ -287,6 +287,14 @@ values are:
 Bridging and bonding
 --------------------
 
+.. warning::
+    Bridge, bond and vlan support needs to be explicitly enabled when using
+    0.8 version of NetworkManager as a backend (for example on RHEL-6). Add following
+    line to the /etc/sysconfig/network file and restart NetworkManager
+
+    NM_BOND_BRIDGE_VLAN_ENABLED=yes
+
+
 Setting up
 ^^^^^^^^^^
 

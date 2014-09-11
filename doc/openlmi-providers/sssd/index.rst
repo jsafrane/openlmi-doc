@@ -1,5 +1,5 @@
-SSSD Provider
-=============
+OpenLMI SSSD Provider documentation
+===========================================
 OpenLMI SSSD is a CIM provider for managing the System Security Services
 Daemon.
 
