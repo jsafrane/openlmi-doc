@@ -16,3 +16,4 @@
     shell/return_values
     shell/interactive_interface
     shell/builtins
+    shell/code

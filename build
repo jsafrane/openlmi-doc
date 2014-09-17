@@ -76,7 +76,7 @@ rm -v _build/mof/*MethodParameters*
 # openlmi-tools
 #######################################################
 pushd _ext/openlmi-tools/doc/src
-make deps-epub index-epub
+make deps-rtd index-rtd
 popd
 
 # Copy docs to the right place
