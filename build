@@ -82,6 +82,14 @@ popd
 # Copy docs to the right place
 rsync -av _ext/openlmi-tools/doc/src/* doc/openlmi-tools/ --exclude=Makefile --exclude="*.py" --exclude="*.skel" --exclude="*.sh"
 
+# install python sources
+export PYTHONPATH=$PWD/_build/python:$PYTHONPATH
+pushd _ext/openlmi-tools/cli
+make
+python setup.py install --root=../../../_build/python
+popd
+cp -vr _build/python/usr/lib/py*/site-packages/lmi doc/python
+
 #######################################################
 # Generate it
 #######################################################
