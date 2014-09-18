@@ -35,6 +35,12 @@ rm -v _build/mof/60_LMI_Service-legacy.mof
 # Remove useless classes and instances
 rm -v _build/mof/*MethodParameters* _build/mof/*IndicationFilters*
 
+# install python sources
+export PYTHONPATH=$PWD/_build/python:$PYTHONPATH
+pushd _ext/openlmi-providers/src/python
+python setup.py install --root=../../../../_build/python
+popd
+
 #######################################################
 # openlmi-networking
 #######################################################
@@ -83,12 +89,14 @@ popd
 rsync -av _ext/openlmi-tools/doc/src/* doc/openlmi-tools/ --exclude=Makefile --exclude="*.py" --exclude="*.skel" --exclude="*.sh"
 
 # install python sources
-export PYTHONPATH=$PWD/_build/python:$PYTHONPATH
+export PYTHONPATH=$PWD/_build/python:$PWD/_build/python/lmi:$PYTHONPATH
 pushd _ext/openlmi-tools/cli
 make
 python setup.py install --root=../../../_build/python
 popd
 cp -vr _build/python/usr/lib/py*/site-packages/lmi doc/python
+#touch doc/python/lmi/__init__.py doc/python/lmi/scripts/__init__.py.
+
 
 #######################################################
 # Generate it
