@@ -26,9 +26,8 @@ class Mock(MagicMock):
     def __getattr__(cls, name):
             return Mock()
 
-MOCK_MODULES = ['pywsman']
+MOCK_MODULES = ['pywsman', 'M2Crypto', 'M2Crypto.SSL']
 sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
-
 
 
 
