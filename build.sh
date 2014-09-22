@@ -95,8 +95,13 @@ make
 python setup.py install --root=../../../_build/python
 popd
 cp -vr _build/python/usr/lib/py*/site-packages/lmi doc/python
-#touch doc/python/lmi/__init__.py doc/python/lmi/scripts/__init__.py.
+touch doc/python/lmi/__init__.py doc/python/lmi/scripts/__init__.py
 
+#######################################################
+# pywbem
+#######################################################
+# We need pywbem to be available in git, it's not on readthedocs.org
+pip -v install -I -t  doc/python/ --allow-external pywbem   pywbem
 
 #######################################################
 # Generate it
