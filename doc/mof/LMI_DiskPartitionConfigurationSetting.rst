@@ -87,13 +87,16 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
 | ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
 | ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
-| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
+| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^

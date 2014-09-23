@@ -1,5 +1,5 @@
-OpenLMI Journald usage
-======================
+Usage
+=====
 
 The OpenLMI Journald provider depends on running journald daemon. See the `systemd
 <http://www.freedesktop.org/software/systemd/man/systemd-journald.service.html>`_

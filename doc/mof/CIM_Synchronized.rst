@@ -65,7 +65,9 @@ Local properties
 
     Partitioned: State of replication relationship can not be determined, for example, due to a connection problem.
 
-    Invalid: The array is unable to determine the state of the replication relationship, for example, after the connection is restored; however, either source or target elements have an unknown status.
+    Invalid: The array is unable to determine the state of the replication relationship, for example, after the connection is restored; however, either source or target elements have an unknown status. 
+
+    Restored: It indicates the source element was restored from the target element.
 
     
     ======== ===============
@@ -87,6 +89,7 @@ Local properties
     15       Not Applicable 
     16       Partitioned    
     17       Invalid        
+    18       Restored       
     ..       DMTF Reserved  
     0x8000.. Vendor Specific
     ======== ===============
@@ -240,7 +243,9 @@ Local properties
 
     Requires activate: The requested operation has completed, however, the synchronization relationship needs to be activated before further copy operations can be issued. 
 
-    Pending: The flow of data has stopped momentarily due to limited bandwidth or busy system.
+    Pending: The flow of data has stopped momentarily due to limited bandwidth or busy system. 
+
+    Requires detach: The requested operation has completed, however, the synchronization relationship needs to be detached before further copy operations can be issued.
 
     
     ======== =================
@@ -267,6 +272,7 @@ Local properties
     19       Requires activate
     20       Pending          
     21       Detaching        
+    22       Requires detach  
     ..       DMTF Reserved    
     0x8000.. Vendor Specific  
     ======== =================

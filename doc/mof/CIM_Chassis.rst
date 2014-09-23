@@ -167,6 +167,7 @@ Local properties
 
 ``uint16[]`` **ChassisTypes**
 
+    **Deprecated!** 
     The use of this property is deprecated in lieu of ChassisPackageType. A physical package should not have multiple form factors. Therefore, this property is being deprecated in lieu of a single value property. 
 
     An enumerated, integer-valued array indicating the type of Chassis.

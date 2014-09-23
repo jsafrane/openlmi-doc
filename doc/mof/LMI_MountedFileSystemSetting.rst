@@ -150,8 +150,11 @@ Inherited properties
 | ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
 | ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 
 Inherited methods

@@ -7,7 +7,9 @@ Class reference
 ===============
 Subclass of :ref:`CIM_ServiceAccessPoint <CIM-ServiceAccessPoint>`
 
-CIM_IPNetworkConnection represents the IP network connection in the system, Eg. "Local Area Connection","eth0"
+"CIM_IPNetworkConnection class represents service access point for the IP interface configuration in the system, Eg. "IP stack configuration on a Local Area Connection","IP stack configuration on a ethernet interface". 
+
+An IP network connection is an aggregation point of different types of settings that can be applied to an IP interface to represent protocol end points".
 
 
 Key properties

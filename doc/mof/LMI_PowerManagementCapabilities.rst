@@ -7,7 +7,7 @@ Class reference
 ===============
 Subclass of :ref:`CIM_PowerManagementCapabilities <CIM-PowerManagementCapabilities>`
 
-A class derived from Capabilities that describes the power management aspects of an element (typically a system or device). The power management capabilities of the element are decoupled from a PowerManagementService, because a single service could apply to multiple elements, each with specific capabilities.
+A class derived from Capabilities that describes the power management aspects of an element (typically a system or device). The element's power management capabilities are decoupled from a PowerManagementService, since a single service could apply to multiple elements, each with specific capabilities.
 
 
 Key properties

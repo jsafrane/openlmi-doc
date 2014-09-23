@@ -39,10 +39,11 @@ Inherited properties
 | ``string`` :ref:`SystemName <CIM-Service-SystemName>`
 | ``uint8`` :ref:`BridgeType <CIM-SwitchService-BridgeType>`
 | ``uint16`` :ref:`BridgeAddressType <CIM-SwitchService-BridgeAddressType>`
+| ``string`` :ref:`LoSID <CIM-Service-LoSID>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
-| ``string`` :ref:`OtherProtocolType <CIM-ForwardingService-OtherProtocolType>`
+| ``uint16`` :ref:`TransitioningToState <CIM-EnabledLogicalElement-TransitioningToState>`
 | ``boolean`` :ref:`Started <CIM-Service-Started>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 | ``datetime`` :ref:`TimeOfLastStateChange <CIM-EnabledLogicalElement-TimeOfLastStateChange>`
@@ -52,6 +53,7 @@ Inherited properties
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
 | ``uint16`` :ref:`EnabledDefault <CIM-EnabledLogicalElement-EnabledDefault>`
 | ``uint16`` :ref:`EnabledState <CIM-EnabledLogicalElement-EnabledState>`
+| ``string`` :ref:`LoSOrgID <CIM-Service-LoSOrgID>`
 | ``string`` :ref:`PrimaryOwnerContact <CIM-Service-PrimaryOwnerContact>`
 | ``string[]`` :ref:`StartupConditions <CIM-NetworkService-StartupConditions>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
@@ -60,7 +62,7 @@ Inherited properties
 | ``uint16`` :ref:`NumPorts <CIM-SwitchService-NumPorts>`
 | ``string[]`` :ref:`StartupParameters <CIM-NetworkService-StartupParameters>`
 | ``uint16`` :ref:`ProtocolType <CIM-ForwardingService-ProtocolType>`
-| ``uint16`` :ref:`TransitioningToState <CIM-EnabledLogicalElement-TransitioningToState>`
+| ``string`` :ref:`OtherProtocolType <CIM-ForwardingService-OtherProtocolType>`
 | ``string`` :ref:`BridgeAddress <CIM-SwitchService-BridgeAddress>`
 | ``string`` :ref:`OtherEnabledState <CIM-EnabledLogicalElement-OtherEnabledState>`
 | ``uint16[]`` :ref:`OperationalStatus <CIM-ManagedSystemElement-OperationalStatus>`

@@ -209,6 +209,7 @@ Local properties
     ======== ====================
     ValueMap Values              
     ======== ====================
+    0        Unknown             
     2        Initialized         
     3        PrepareInProgress   
     4        Prepared            

@@ -98,13 +98,6 @@ Local properties
     32768..65535 Vendor Specific      
     ============ =====================
     
-.. _LMI-SoftwareInstallationService-SystemCreationClassName:
-
-``string`` **SystemCreationClassName**
-
-    The CreationClassName of the scoping System.
-
-    
 .. _LMI-SoftwareInstallationService-InstanceID:
 
 ``string`` **InstanceID**
@@ -462,6 +455,13 @@ Local properties
     ..       DMTF Reserved  
     0x8000.. Vendor Reserved
     ======== ===============
+    
+.. _LMI-SoftwareInstallationService-SystemCreationClassName:
+
+``string`` **SystemCreationClassName**
+
+    The CreationClassName of the scoping System.
+
     
 .. _LMI-SoftwareInstallationService-CreationClassName:
 
@@ -874,15 +874,17 @@ Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
 | ``string[]`` :ref:`StatusDescriptions <CIM-ManagedSystemElement-StatusDescriptions>`
+| ``string`` :ref:`LoSID <CIM-Service-LoSID>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
 | ``datetime`` :ref:`TimeOfLastStateChange <CIM-EnabledLogicalElement-TimeOfLastStateChange>`
 | ``uint16[]`` :ref:`AvailableRequestedStates <CIM-EnabledLogicalElement-AvailableRequestedStates>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
+| ``string`` :ref:`LoSOrgID <CIM-Service-LoSOrgID>`
 | ``string`` :ref:`StartMode <CIM-Service-StartMode>`
+| ``string`` :ref:`PrimaryOwnerName <CIM-Service-PrimaryOwnerName>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 | ``string`` :ref:`OtherEnabledState <CIM-EnabledLogicalElement-OtherEnabledState>`
-| ``string`` :ref:`PrimaryOwnerName <CIM-Service-PrimaryOwnerName>`
 | ``string`` :ref:`PrimaryOwnerContact <CIM-Service-PrimaryOwnerContact>`
 
 Inherited methods

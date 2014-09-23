@@ -7,7 +7,7 @@ Class reference
 ===============
 Subclass of :ref:`CIM_Capabilities <CIM-Capabilities>`
 
-A class derived from Capabilities that describes the power management aspects of an element (typically a system or device). The power management capabilities of the element are decoupled from a PowerManagementService, because a single service could apply to multiple elements, each with specific capabilities.
+A class derived from Capabilities that describes the power management aspects of an element (typically a system or device). The element's power management capabilities are decoupled from a PowerManagementService, since a single service could apply to multiple elements, each with specific capabilities.
 
 
 Key properties
@@ -29,8 +29,7 @@ Local properties
 
 ``string[]`` **OtherPowerCapabilitiesDescriptions**
 
-    **Deprecated!** 
-    An array of strings that describes the additional power management capabilities of an element, used when the PowerCapabilities array includes the value 1, "Other".
+    An array of strings describing an element's additional power management capabilities, used when the PowerCapabilities array includes the value 1, "Other".
 
     
 .. _CIM-PowerManagementCapabilities-RequestedPowerStatesSupported:
@@ -131,20 +130,19 @@ Local properties
 
 ``uint16[]`` **PowerCapabilities**
 
-    **Deprecated!** 
-    The CIM_PowerManagementCapabilities.PowerChangeCapabilities property should be used instead of PowerCapabilities property, which is deprecated. An enumeration indicating the specific power-related capabilities of a managed element. Because this is an array, multiple values can be specified. The current values in the enumeration are: 
+    An enumeration indicating the specific power-related capabilities of a managed element. Since this is an array, multiple values may be specified. The current values in the enumeration are: 
 
-    0=Unknown 
+    0 = Unknown 
 
-    1=Other 
+    1 = Other 
 
-    2=Power Saving Modes Entered Automatically, indicating that a managed element can change its power state based on usage or other criteria 
+    2 = Power Saving Modes Entered Automatically, describing that a managed element can change its power state based on usage or other criteria 
 
-    3=Power State Settable, indicating that the SetPowerState method is supported 
+    3 = Power State Settable, indicating that the SetPowerState method is supported 
 
-    4=Power Cycling Supported, indicating that the SetPowerState method can be invoked with the PowerState input variable set to 'Power Cycle' 
+    4 = Power Cycling Supported, indicating that the SetPowerState method can be invoked with the PowerState input variable set to 'Power Cycle' 
 
-    5=Timed Power On Supported, indicating that the SetPowerState method can be invoked with the PowerState input variable set to 'Power Cycle' and the Time parameter set to a specific date and time, or interval, for power-on.
+    5 = Timed Power On Supported, indicating that the SetPowerState method can be invoked with the PowerState input variable set to 'Power Cycle' and the Time parameter set to a specific date and time, or interval, for power-on.
 
     
     ======== ========================================
@@ -188,8 +186,6 @@ Local properties
 
     16=Power Cycle (Off - Hard Graceful), equivalent to Power Cycle (Off - Hard) but preceded by a request to the managed element to perform an orderly shutdown. 
 
-    17=Diagnostic Interrupt (INIT), equivalent to Diagnostic Interrupt (NMI) but performed by an INIT switch instead because the NMI signal is masked. 
-
     ..=DMTF Reserved. 
 
     0x7FFF..0xFFFF = Vendor Specific.
@@ -214,7 +210,6 @@ Local properties
     14             Master Bus Reset Graceful        
     15             Power Cycle (Off - Soft Graceful)
     16             Power Cycle (Off - Hard Graceful)
-    17             Diagnostic Interrupt (INIT)      
     ..             DMTF Reserved                    
     0x7FFF..0xFFFF Vendor Specific                  
     ============== =================================

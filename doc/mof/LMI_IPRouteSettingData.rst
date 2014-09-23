@@ -7,7 +7,7 @@ Class reference
 ===============
 Subclass of :ref:`LMI_IPAssignmentSettingData <LMI-IPAssignmentSettingData>`
 
-This SettingData instance is the aggregation point identifying an IP configuration. Multiple IP configurations could exist for a target. Each configuration is represented with an instance of IPAssignmentSettingData. The details of the IP configuration are defined by instances of sub-classes of this class (i.e. StaticIPAssignmentSettingData, DHCPSettingData, DNSSettingData). These instances are associated with the IPAssignmentSettingData instance using the OrderedComponent or ConcreteComponent associations. For example, a static IP configuration would be represented by an instance of IPAssignmentSettingData and an instance of StaticIPAssignmentSettingData associated via an instance of ConcreteComponent. A static IP configuration including DNS would be modeled using an instance of IPAssignmentSettingData, DNSSettingData, and StaticIPAssignmentSettingData. The DNSSettingData and StaticIPAssignmentSettingData instance would be associated with the IPAssignmentSettingData using instances of ConcreteComponent.
+This class and its sub-classes represents Internet Protocol (IP) related settings. When used as an accumulation of settings (AddressOrigin set to 11 "cumulative configuration"), this SettingData instance is the aggregation point identifying an IP configuration. Multiple IP configurations could exist for a target. Each configuration is represented with an instance of IPAssignmentSettingData. The details of the IP configuration are defined by instances of sub-classes of this class (i.e. StaticIPAssignmentSettingData, DHCPSettingData, DNSSettingData). These instances are associated with the IPAssignmentSettingData instance using the OrderedComponent or ConcreteComponent associations. For example, a static IP configuration would be represented by an instance of IPAssignmentSettingData and an instance of StaticIPAssignmentSettingData associated via an instance of ConcreteComponent. A static IP configuration including DNS would be modeled using an instance of IPAssignmentSettingData, DNSSettingData, and StaticIPAssignmentSettingData. The DNSSettingData and StaticIPAssignmentSettingData instance would be associated with the IPAssignmentSettingData using instances of ConcreteComponent.
 
 
 Key properties
@@ -18,6 +18,13 @@ Key properties
 Local properties
 ^^^^^^^^^^^^^^^^
 
+.. _LMI-IPRouteSettingData-NextHop:
+
+``string`` **NextHop**
+
+    Address of the next-hop router
+
+    
 .. _LMI-IPRouteSettingData-DestinationAddress:
 
 ``string`` **DestinationAddress**
@@ -54,13 +61,6 @@ Local properties
     RouteMetric provides a numeric indication as to the preference of this route, compared to other routes that reach the same destination.
 
     
-.. _LMI-IPRouteSettingData-NextHop:
-
-``string`` **NextHop**
-
-    Address of the next-hop router
-
-    
 .. _LMI-IPRouteSettingData-PrefixLength:
 
 ``uint8`` **PrefixLength**
@@ -77,17 +77,24 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
-| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
-| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
-| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
-| ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
-| ``string`` :ref:`Caption <LMI-IPAssignmentSettingData-Caption>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
-| ``uint16`` :ref:`IPv6Type <LMI-IPAssignmentSettingData-IPv6Type>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressPrefixOriginDescription>`
 | ``uint16`` :ref:`ProtocolIFType <LMI-IPAssignmentSettingData-ProtocolIFType>`
+| ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressSuffixOriginDescription>`
+| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPAssignmentSettingData-AddressPrefixOrigin>`
+| ``uint16`` :ref:`IPv6Type <LMI-IPAssignmentSettingData-IPv6Type>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPAssignmentSettingData-AddressSuffixOrigin>`
+| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
+| ``string`` :ref:`Caption <LMI-IPAssignmentSettingData-Caption>`
+| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
-| ``uint16`` :ref:`AddressOrigin <LMI-IPAssignmentSettingData-AddressOrigin>`
 | ``uint16`` :ref:`IPv4Type <LMI-IPAssignmentSettingData-IPv4Type>`
+| ``uint16`` :ref:`AddressOrigin <LMI-IPAssignmentSettingData-AddressOrigin>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^

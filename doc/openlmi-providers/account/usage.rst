@@ -1,5 +1,5 @@
-OpenLMI Account usage
-=====================
+Usage
+=====
 
 General manipulation of users and groups are done with the objects
 from following classes:

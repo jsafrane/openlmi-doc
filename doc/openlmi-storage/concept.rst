@@ -1,7 +1,7 @@
-.. _openlmi-usage:
+.. _openlmi-concept:
 
-OpenLMI-Storage concept
-=======================
+Storage API concept
+===================
 
 OpenLMI-Storage provides CIM API. Some CIM knowledge is required and this guide
 assumes that reader can routinely read and modify remote CIM objects and call

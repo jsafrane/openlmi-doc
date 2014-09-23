@@ -1,5 +1,5 @@
-OpenLMI Realmd usage
-=====================
+Usage
+=====
 
 The OpenLMI Realmd provider allows for basic configuration of the managed
 systems Active Directory or Kerberos realms membership. It relies on the Realmd

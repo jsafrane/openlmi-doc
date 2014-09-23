@@ -1,8 +1,10 @@
-OpenLMI LogicalFile configuration
-=================================
+Configuration
+=============
 
 Configuration is stored in ``/etc/openlmi/logicalfile/logicalfile.conf``.
 
+In addition to :ref:`common configuration options <common-configuration>`,
+this provider can be configured to allow or deny various filesystem operations.
 Default configuration::
 
   [LMI_UnixDirectory]
@@ -16,5 +18,4 @@ Default configuration::
   # Allow user to create symbolic links. (default = False)
   AllowSymlink=False
 
-Options and their values are self-explanatory. The example configuration is
-complete, meaning that no more sections or options are available.
+Options and their values are self-explanatory.

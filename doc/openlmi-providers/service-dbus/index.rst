@@ -1,5 +1,6 @@
-OpenLMI Service Provider documentation
-===========================================
+Service Provider
+================
+
 OpenLMI Service is CIM provider for managing Linux system services (using
 the systemd D-Bus interface).
 
@@ -18,7 +19,7 @@ Contents:
 
 .. ifconfig:: includeClasses
 
-    OpenLMI Service CIM Classes:
+    CIM Classes:
 
     .. toctree::
        :maxdepth: 1

@@ -23,7 +23,6 @@ Local properties
 
 ``boolean`` **HotSwappable**
 
-    **Deprecated!** 
     The use of this property is being deprecated. Instead RemovalConditions should be used. The RemovalConditions property addresses whether a PhysicalPackage is removable with or without power being applied. 
 
     
@@ -67,7 +66,6 @@ Local properties
 
 ``boolean`` **Replaceable**
 
-    **Deprecated!** 
     The use of this property is being deprecated because it is redundant with the FRU class and its associations. A PhysicalPackage is Replaceable if it is possible to replace (FRU or upgrade) the Element with a physically different one. For example, some ComputerSystems allow the main Processor chip to be upgraded to one of a higher clock rating. In this case, the Processor is said to be Replaceable. Another example is a power supply Package mounted on sliding rails. All Removable packages are inherently Replaceable.
 
     

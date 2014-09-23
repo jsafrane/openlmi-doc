@@ -1,5 +1,6 @@
-OpenLMI Locale Provider documentation
-=====================================
+Locale Provider
+===============
+
 OpenLMI Locale is CIM provider for managing Linux locale settings (using the
 `systemd/localed D-Bus interface <http://www.freedesktop.org/wiki/Software/systemd/localed/>`_).
 
@@ -30,7 +31,7 @@ Contents:
 
 .. ifconfig:: includeClasses
 
-    OpenLMI Locale CIM Classes:
+    CIM Classes:
 
     .. toctree::
        :maxdepth: 1

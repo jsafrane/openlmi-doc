@@ -170,6 +170,7 @@ Inherited properties
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
 | ``boolean`` :ref:`CompressedElement <CIM-StorageSetting-CompressedElement>`
 | ``string`` :ref:`CUImage <CIM-StorageSetting-CUImage>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
 | ``boolean`` :ref:`PersistentReplica <CIM-StorageSetting-PersistentReplica>`
 | ``uint16`` :ref:`InitialSynchronization <CIM-StorageSetting-InitialSynchronization>`
 | ``uint16`` :ref:`Encryption <CIM-StorageSetting-Encryption>`
@@ -180,6 +181,7 @@ Inherited properties
 | ``uint16`` :ref:`PortType <CIM-StorageSetting-PortType>`
 | ``boolean`` :ref:`IncrementalDeltas <CIM-StorageSetting-IncrementalDeltas>`
 | ``uint16`` :ref:`StoragePoolInitialUsage <CIM-StorageSetting-StoragePoolInitialUsage>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
 | ``uint16`` :ref:`ReplicationPriority <CIM-StorageSetting-ReplicationPriority>`
 | ``uint8`` :ref:`DeltaReservationMin <CIM-StorageSetting-DeltaReservationMin>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
@@ -187,6 +189,7 @@ Inherited properties
 | ``uint64`` :ref:`UserDataStripeDepthMax <CIM-StorageSetting-UserDataStripeDepthMax>`
 | ``uint64`` :ref:`SpaceLimit <CIM-StorageSetting-SpaceLimit>`
 | ``uint16`` :ref:`SpaceLimitWarningThreshold <CIM-StorageSetting-SpaceLimitWarningThreshold>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``uint8`` :ref:`DeltaReservationMax <CIM-StorageSetting-DeltaReservationMax>`
 | ``uint64`` :ref:`UserDataStripeDepth <CIM-StorageSetting-UserDataStripeDepth>`
 

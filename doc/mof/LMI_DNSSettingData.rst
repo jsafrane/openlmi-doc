@@ -18,15 +18,6 @@ Key properties
 Local properties
 ^^^^^^^^^^^^^^^^
 
-.. _LMI-DNSSettingData-DNSSearchDomains:
-
-``string[]`` **DNSSearchDomains**
-
-    The DNS search domains. The array ordering correlates to the order in which the search domains will be used. If using DHCP, DNS search domains obtained from DHCP will be prepended to this array.
-
-    
-
-    
 .. _LMI-DNSSettingData-ProtocolIFType:
 
 ``uint16`` **ProtocolIFType**
@@ -48,6 +39,15 @@ Local properties
     The DNS servers to contact. The array ordering correlates to the order in which the DNS servers will be contacted. If using DHCP, DNS servers obtained from DHCP will be prepended to this array.
 
     The RemoteServiceAccessPoints associated with the DNSProtocolEndpoint with the value of the AccessContext property being ``DNS Server`` represent the actual DNS Servers being utilized by the DNS client.
+
+    
+.. _LMI-DNSSettingData-DNSSearchDomains:
+
+``string[]`` **DNSSearchDomains**
+
+    The DNS search domains. The array ordering correlates to the order in which the search domains will be used. If using DHCP, DNS search domains obtained from DHCP will be prepended to this array.
+
+    
 
     
 .. _LMI-DNSSettingData-AddressOrigin:
@@ -72,18 +72,25 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
-| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
-| ``boolean`` :ref:`UseSuffixWhenRegistering <CIM-DNSSettingData-UseSuffixWhenRegistering>`
-| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
-| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
 | ``string`` :ref:`DomainName <CIM-DNSSettingData-DomainName>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
+| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressPrefixOriginDescription>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
-| ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
-| ``uint16[]`` :ref:`DHCPOptionsToUse <CIM-DNSSettingData-DHCPOptionsToUse>`
 | ``boolean`` :ref:`RegisterThisConnectionsAddress <CIM-DNSSettingData-RegisterThisConnectionsAddress>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``uint16[]`` :ref:`DHCPOptionsToUse <CIM-DNSSettingData-DHCPOptionsToUse>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressSuffixOriginDescription>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPAssignmentSettingData-AddressPrefixOrigin>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPAssignmentSettingData-AddressSuffixOrigin>`
+| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
+| ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
+| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 | ``string`` :ref:`RequestedHostname <CIM-DNSSettingData-RequestedHostname>`
+| ``boolean`` :ref:`UseSuffixWhenRegistering <CIM-DNSSettingData-UseSuffixWhenRegistering>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^

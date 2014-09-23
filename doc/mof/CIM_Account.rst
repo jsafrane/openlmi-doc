@@ -193,6 +193,10 @@ Local properties
 
     "UCS-2" denotes that the UserPassword is a Unicode string that is encoded using UCS-2 character set.
 
+    "UCS-2LE" denotes that the UserPassword is a Unicode string that is encoded using UCS-2 character set in little endian byte order.
+
+    "UCS-2BE" denotes that the UserPassword is a Unicode string that is encoded using UCS-2 character set in big endian byte order.
+
     
     ================= ===============
     ValueMap          Values         
@@ -205,6 +209,8 @@ Local properties
     7                 UTF-16LE       
     8                 UTF-16BE       
     9                 UCS-2          
+    10                USC-2LE        
+    11                UCS-2BE        
     ..                DMTF Reserved  
     65536..4294967295 Vendor Reserved
     ================= ===============

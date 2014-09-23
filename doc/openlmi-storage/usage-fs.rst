@@ -28,6 +28,7 @@ Following instance diagram shows four block devices:
   associated.
 
 .. figure:: pic/fs-instance.svg
+   :target: ../_images/fs-instance.svg
 
 .. Note::
 
@@ -64,12 +65,19 @@ Useful methods
 Use cases
 ---------
 
+.. _example-create-filesystem:
+
 Create File System
 ^^^^^^^^^^^^^^^^^^
 
 Use
 :ref:`LMI_CreateFileSystem <LMI-FileSystemConfigurationService-LMI-CreateFileSystem>`
-method. Following example formats ``/dev/sda3`` with ext3:: 
+method. Following example formats ``/dev/sda3`` with ext3::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    filesystem_service = ns.LMI_FileSystemConfigurationService.first_instance()
 
     # Find the /dev/sda3 device
     sda3 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sda3"})
@@ -90,7 +98,12 @@ Use the same
 method as above. Following example formats ``/dev/sda1`` and ``dev/sda2`` as
 one btrfs volume::
 
-    # Find the /dev/sda1+2 devices
+   # Connect to the remote system and prepare some local variables
+   connection = connect("remote.host.org", "root", "opensesame")
+   ns = connection.root.cimv2  # ns as NameSpace
+   filesystem_service = ns.LMI_FileSystemConfigurationService.first_instance()
+
+   # Find the /dev/sda1+2 devices
    sda1 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sda1"})
    sda2 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sda2"})
 
@@ -108,6 +121,11 @@ Delete filesystem
 Use
 :ref:`LMI_CreateFileSystem <LMI-FileSystemConfigurationService-DeleteFileSystem>`
 method::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    filesystem_service = ns.LMI_FileSystemConfigurationService.first_instance()
 
     sda1 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sda1"})
     fs = sda1.first_associator(ResultClass='LMI_LocalFileSystem')

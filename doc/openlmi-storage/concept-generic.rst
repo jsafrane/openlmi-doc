@@ -38,6 +38,7 @@ application would not have access to its ``BlockSize``, which is important
 feature of the filesystem.
 
 .. figure:: pic/intro-setting.svg
+   :target: ../_images/intro-setting.svg
 
 Configuration service
 ---------------------
@@ -120,9 +121,10 @@ This is the case of filesystem configuration, the capabilities of xfs and ext3
 filesystem is defined using ``CIM_LocalFileSystemSetting``.
 
 .. figure:: pic/intro-service.svg
+   :target: ../_images/intro-service.svg
 
-    Example ``CIM_FileSystemConfigurationService`` with capabilities and
-    settings, which define the capabilities.
+   Example ``CIM_FileSystemConfigurationService`` with capabilities and
+   settings, which define the capabilities.
 
 There are slight variations on this concept across DMTF and SMI-S profiles as
 the standards evolved, sometimes are ``CIM_FooConfigurationCapabilities`` and

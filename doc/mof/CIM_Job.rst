@@ -217,7 +217,6 @@ Local properties
 
 ``datetime`` **ScheduledStartTime**
 
-    **Deprecated!** 
     The time that the current Job is scheduled to start. This time can be represented by the actual date and time, or an interval relative to the time that this property is requested. A value of all zeroes indicates that the Job is already executing. The property is deprecated in lieu of the more expressive scheduling properties, RunMonth, RunDay, RunDayOfWeek, and RunStartInterval.
 
     

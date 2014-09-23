@@ -56,14 +56,22 @@ Local properties
 
 ``string`` **MethodParameters**
 
-    The parameters of the method, formatted as an EmbeddedObject (with a predefined class name of "__MethodParameters".
+    The input and output parameters of the method (depending on the PreCall property), represented as an embedded instance with a class name of "__MethodParameters".
+
+    That embedded instance contains properties representing the parameters of the method invocation. Each parameter is mapped to a corresponding property of the same name and type. REF-typed parameters are represented as Reference-qualified properties of type string whose value is the instance path in WBEM URI format.
+
+    If PreCall is TRUE, the embedded instance contains only properties corresponding to the input parameters of the method, and their values are the parameter values before the method call.
+
+    If PreCall is FALSE, the embedded instance contains only properties corresponding to the output parameters of the method, and their values are the parameter values after the method call.
 
     
 .. _CIM-InstMethodCall-ReturnValue:
 
 ``string`` **ReturnValue**
 
-    ReturnValue's data is dependent on the PreCall property. When PreCall is TRUE, this property is NULL describing that there is no method return value (since the method has not yet executed). When PreCall is FALSE, ReturnValue contains a string representation of the method's return value.
+    The return value of the method (depending on the PreCall property). If PreCall is True, this property is NULL describing that there is no method return value (since the method has not yet executed).
+
+    If PreCall is False, ReturnValue contains a string representation of the method's return value. REF-typed method return values shall be represented as an instance path in WBEM URI format
 
     
 .. _CIM-InstMethodCall-Error:

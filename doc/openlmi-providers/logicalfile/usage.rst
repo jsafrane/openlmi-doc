@@ -1,5 +1,5 @@
-OpenLMI LogicalFile usage
-=========================
+Usage
+=====
 
 There are two basic types of classes in the LogicalFile provider.
 

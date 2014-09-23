@@ -1,5 +1,6 @@
-*OpenLMI Software* usage
-========================
+Usage
+=====
+
 Examples for common use cases listed below are written in `lmishell`_. Where
 appropriate, an example for ``lmi`` meta-command, which is a part of
 *OpenLMI-Scripts* project, is added. Please refer to its `documentation`_

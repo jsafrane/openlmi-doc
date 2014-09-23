@@ -39,29 +39,36 @@ Local properties
     Indicates the intended usage or any restrictions that may have been imposed on the usage of this component. All ValueMap/Values entries are defined in CIM_StorageExtent. To promote interoperability across subclasses, all new entries for this class shall be defined there.
 
     
-    ============ ==============================================
-    ValueMap     Values                                        
-    ============ ==============================================
-    1            Other                                         
-    2            Unrestricted                                  
-    3            Reserved for ComputerSystem (the block server)
-    4            Reserved by Replication Services              
-    5            Reserved by Migration Services                
-    6            Local Replica Source                          
-    7            Remote Replica Source                         
-    8            Local Replica Target                          
-    9            Remote Replica Target                         
-    10           Local Replica Source or Target                
-    11           Remote Replica Source or Target               
-    12           Delta Replica Target                          
-    13           Element Component                             
-    14           Reserved as Pool Contributor                  
-    15           Composite Volume Member                       
-    16           Composite LogicalDisk Member                  
-    17           Reserved for Sparing                          
-    ..           DMTF Reserved                                 
-    32768..65535 Vendor Reserved                               
-    ============ ==============================================
+    ============ ==================================================
+    ValueMap     Values                                            
+    ============ ==================================================
+    1            Other                                             
+    2            Unrestricted                                      
+    3            Reserved for ComputerSystem (the block server)    
+    4            Reserved by Replication Services                  
+    5            Reserved by Migration Services                    
+    6            Local Replica Source                              
+    7            Remote Replica Source                             
+    8            Local Replica Target                              
+    9            Remote Replica Target                             
+    10           Local Replica Source or Target                    
+    11           Remote Replica Source or Target                   
+    12           Delta Replica Target                              
+    13           Element Component                                 
+    14           Reserved to be Unrestricted Pool Contributor      
+    15           Composite Volume Member                           
+    16           Composite LogicalDisk Member                      
+    17           Reserved for Sparing                              
+    18           In use as Unrestricted Pool Contributor           
+    19           Reserved to be Delta Replica Pool Contributor     
+    20           Reserved to be Local Replication Pool Contributor 
+    21           Reserved to be Remote Replication Pool Contributor
+    22           In use as Delta Replica Pool Contributor          
+    23           In use as Local Replication Pool Contributor      
+    24           In use as Remote Replication Pool Contributor     
+    ..           DMTF Reserved                                     
+    32768..65535 Vendor Reserved                                   
+    ============ ==================================================
     
 .. _CIM-LogicalDisk-NumExtentsMigrating:
 

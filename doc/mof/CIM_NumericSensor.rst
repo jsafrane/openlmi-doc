@@ -108,6 +108,7 @@ Local properties
 
 ``sint32`` **Tolerance**
 
+    **Deprecated!** 
     This property is being deprecated in lieu of using the Resolution and Accuracy properties. 
 
     Indicates the tolerance of the Sensor for the measured property. Tolerance, along with Resolution and Accuracy, is used to calculate the actual value of the measured physical property. Tolerance may vary depending on whether the Device is linear over its dynamic range.
@@ -196,6 +197,7 @@ Local properties
 
 ``sint32`` **Accuracy**
 
+    **Deprecated!** 
     Indicates the accuracy of the Sensor for the measured property. Its value is recorded as plus/minus hundredths of a percent. Accuracy, along with Resolution, is used to calculate the actual value of the measured physical property. Accuracy may vary depending on whether the Device is linear over its dynamic range.
 
     
@@ -345,7 +347,6 @@ Local methods
 
 ``uint32`` **GetNonLinearFactors** (``sint32`` SensorReading, ``sint32`` Accuracy, ``uint32`` Resolution, ``sint32`` Tolerance, ``uint32`` Hysteresis)
 
-    **Deprecated!** 
     The use of this method is being deprecated, since Current senor reading can be retrieved through the GetInstance operation. 
 
     For a non-linear Sensor, the resolution, accuracy, tolerance and hysteresis vary as the current reading moves. This method can be used to get these factors for a given reading. It returns 0 if successful, 1 if unsupported, and any other value if an error occurred. In a subclass, the set of possible return codes could be specified, using a ValueMap qualifier on the method. The strings to which the ValueMap contents are 'translated' may also be specified in the subclass as a Values array qualifier.

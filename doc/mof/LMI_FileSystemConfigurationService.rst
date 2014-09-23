@@ -385,6 +385,7 @@ Inherited properties
 | ``string`` :ref:`InstanceID <CIM-ManagedElement-InstanceID>`
 | ``uint16`` :ref:`CommunicationStatus <CIM-ManagedSystemElement-CommunicationStatus>`
 | ``string`` :ref:`SystemName <CIM-Service-SystemName>`
+| ``string`` :ref:`LoSID <CIM-Service-LoSID>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
@@ -393,6 +394,7 @@ Inherited properties
 | ``uint16`` :ref:`DetailedStatus <CIM-ManagedSystemElement-DetailedStatus>`
 | ``string`` :ref:`Name <CIM-Service-Name>`
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
+| ``string`` :ref:`LoSOrgID <CIM-Service-LoSOrgID>`
 | ``string`` :ref:`PrimaryOwnerContact <CIM-Service-PrimaryOwnerContact>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
 | ``uint16[]`` :ref:`AvailableRequestedStates <CIM-EnabledLogicalElement-AvailableRequestedStates>`

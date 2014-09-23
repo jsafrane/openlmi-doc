@@ -215,7 +215,7 @@ Inherited properties
 | ``uint64`` :ref:`Capacity <CIM-ResourcePool-Capacity>`
 | ``string[]`` :ref:`StatusDescriptions <CIM-ManagedSystemElement-StatusDescriptions>`
 | ``uint16[]`` :ref:`ClientSettableUsage <CIM-StoragePool-ClientSettableUsage>`
-| ``uint64`` :ref:`SpaceLimit <CIM-StoragePool-SpaceLimit>`
+| ``string`` :ref:`ResourceSubType <CIM-ResourcePool-ResourceSubType>`
 | ``uint16`` :ref:`CommunicationStatus <CIM-ManagedSystemElement-CommunicationStatus>`
 | ``uint16`` :ref:`Usage <CIM-StoragePool-Usage>`
 | ``uint64`` :ref:`CurrentlyConsumedResource <CIM-ResourcePool-CurrentlyConsumedResource>`
@@ -234,11 +234,13 @@ Inherited properties
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
 | ``uint64`` :ref:`CapacityInMigratingTarget <CIM-StoragePool-CapacityInMigratingTarget>`
 | ``uint16`` :ref:`PrimaryStatus <CIM-ManagedSystemElement-PrimaryStatus>`
+| ``uint64`` :ref:`ReservedSpace <CIM-StoragePool-ReservedSpace>`
 | ``uint64`` :ref:`Reserved <CIM-ResourcePool-Reserved>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
-| ``string`` :ref:`ResourceSubType <CIM-ResourcePool-ResourceSubType>`
+| ``uint64`` :ref:`SpaceLimit <CIM-StoragePool-SpaceLimit>`
 | ``uint16[]`` :ref:`OperationalStatus <CIM-ManagedSystemElement-OperationalStatus>`
 | ``uint64`` :ref:`ThinProvisionMetaDataSpace <CIM-StoragePool-ThinProvisionMetaDataSpace>`
+| ``boolean`` :ref:`ElementsShareSpace <CIM-StoragePool-ElementsShareSpace>`
 | ``string`` :ref:`ConsumedResourceUnits <CIM-ResourcePool-ConsumedResourceUnits>`
 
 Inherited methods

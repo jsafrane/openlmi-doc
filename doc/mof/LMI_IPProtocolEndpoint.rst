@@ -82,7 +82,7 @@ Inherited properties
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
 | ``uint16`` :ref:`AddressType <CIM-IPProtocolEndpoint-AddressType>`
-| ``string`` :ref:`Description <CIM-ProtocolEndpoint-Description>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPProtocolEndpoint-OtherAddressPrefixOriginDescription>`
 | ``uint16`` :ref:`TransitioningToState <CIM-EnabledLogicalElement-TransitioningToState>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 | ``string`` :ref:`NameFormat <CIM-ProtocolEndpoint-NameFormat>`
@@ -91,13 +91,17 @@ Inherited properties
 | ``uint16`` :ref:`IPv6AddressType <CIM-IPProtocolEndpoint-IPv6AddressType>`
 | ``uint16`` :ref:`EnabledState <CIM-ProtocolEndpoint-EnabledState>`
 | ``uint16`` :ref:`DetailedStatus <CIM-ManagedSystemElement-DetailedStatus>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPProtocolEndpoint-OtherAddressSuffixOriginDescription>`
 | ``string`` :ref:`Name <CIM-ProtocolEndpoint-Name>`
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
 | ``uint16`` :ref:`EnabledDefault <CIM-EnabledLogicalElement-EnabledDefault>`
 | ``uint16`` :ref:`IPv6SubnetPrefixLength <CIM-IPProtocolEndpoint-IPv6SubnetPrefixLength>`
-| ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPProtocolEndpoint-AddressPrefixOrigin>`
 | ``string`` :ref:`OtherTypeDescription <CIM-ProtocolEndpoint-OtherTypeDescription>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPProtocolEndpoint-AddressSuffixOrigin>`
 | ``uint16[]`` :ref:`AvailableRequestedStates <CIM-EnabledLogicalElement-AvailableRequestedStates>`
+| ``string`` :ref:`Description <CIM-ProtocolEndpoint-Description>`
+| ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
 | ``boolean`` :ref:`BroadcastResetSupported <CIM-ProtocolEndpoint-BroadcastResetSupported>`
 | ``uint16`` :ref:`ProtocolType <CIM-ProtocolEndpoint-ProtocolType>`
 | ``string`` :ref:`OtherEnabledState <CIM-EnabledLogicalElement-OtherEnabledState>`

@@ -115,7 +115,13 @@ Local properties
 
 ``boolean`` **DeleteOnCompletion**
 
-    Indicates whether or not the job should be automatically deleted upon completion. Note that the 'completion' of a recurring job is defined by its JobRunTimes or UntilTime properties, or when the Job is terminated by manual intervention. If this property is set to false and the job completes, then the extrinsic method DeleteInstance must be used to delete the job instead of updating this property.
+    Indicates whether or not the job should be automatically deleted upon completion. Note that the 'completion' of a job includes when the Job is terminated by manual intervention. 
+
+    If this property is set to false and the job completes, then the intrinsic method DeleteInstance must be used to delete the job instead of updating this property.
+
+    If this property is set to true and the job completes, then the job may be deleted after the TimeBeforeRemoval interval.
+
+    If there is a CIM_DiagnosticServiceJobCapabilities associated to the service that spawned the job, then the DeleteOnCompletion should be TRUE if CIM_DiagnosticServiceJobCapabilities.DeleteJobSupported is FALSE. If DeleteOnCompletion is FALSE, then CIM_DiagnosticServiceJobCapabilities.CleanupInterval should be non-NULL.
 
     
 .. _LMI-ConcreteJob-ElapsedTime:
@@ -201,39 +207,6 @@ Local properties
 Local methods
 ^^^^^^^^^^^^^
 
-    .. _LMI-ConcreteJob-GetErrors:
-
-``uint32`` **GetErrors** (``string[]`` Errors)
-
-    If JobState is "Completed" and Operational Status is "Completed" then no instance of CIM_Error is returned. 
-
-    If JobState is "Exception" then GetErrors may return intances of CIM_Error related to the execution of the procedure or method invoked by the job.
-
-    If Operatational Status is not "OK" or "Completed"then GetErrors may return CIM_Error instances related to the running of the job.
-
-    
-    ============ =================
-    ValueMap     Values           
-    ============ =================
-    0            Success          
-    1            Not Supported    
-    2            Unspecified Error
-    3            Timeout          
-    4            Failed           
-    5            Invalid Parameter
-    6            Access Denied    
-    ..           DMTF Reserved    
-    32768..65535 Vendor Specific  
-    ============ =================
-    
-    **Parameters**
-    
-        *OUT* ``string[]`` **Errors**
-            If the OperationalStatus on the Job is not "OK", then this method will return one or more CIM Error instance(s). Otherwise, when the Job is "OK", null is returned.
-
-            
-        
-    
     .. _LMI-ConcreteJob-RequestStateChange:
 
 ``uint32`` **RequestStateChange** (``uint16`` RequestedState, ``datetime`` TimeoutPeriod)
@@ -331,6 +304,39 @@ Local methods
             
         
     
+    .. _LMI-ConcreteJob-GetErrors:
+
+``uint32`` **GetErrors** (``string[]`` Errors)
+
+    If JobState is "Completed" and Operational Status is "Completed" then no instance of CIM_Error is returned. 
+
+    If JobState is "Exception" then GetErrors may return intances of CIM_Error related to the execution of the procedure or method invoked by the job.
+
+    If Operatational Status is not "OK" or "Completed"then GetErrors may return CIM_Error instances related to the running of the job.
+
+    
+    ============ =================
+    ValueMap     Values           
+    ============ =================
+    0            Success          
+    1            Not Supported    
+    2            Unspecified Error
+    3            Timeout          
+    4            Failed           
+    5            Invalid Parameter
+    6            Access Denied    
+    ..           DMTF Reserved    
+    32768..65535 Vendor Specific  
+    ============ =================
+    
+    **Parameters**
+    
+        *OUT* ``string[]`` **Errors**
+            If the OperationalStatus on the Job is not "OK", then this method will return one or more CIM Error instance(s). Otherwise, when the Job is "OK", null is returned.
+
+            
+        
+    
 
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
@@ -370,5 +376,7 @@ Inherited properties
 Inherited methods
 ^^^^^^^^^^^^^^^^^
 
+| :ref:`ResumeWithAction <CIM-ConcreteJob-ResumeWithAction>`
 | :ref:`KillJob <CIM-Job-KillJob>`
+| :ref:`ResumeWithInput <CIM-ConcreteJob-ResumeWithInput>`
 

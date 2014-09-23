@@ -152,6 +152,7 @@ Local properties
 
 ``string`` **DataFormat**
 
+    **Deprecated!** 
     A free-form string describing the LogRecord's data structure.
 
     

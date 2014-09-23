@@ -44,6 +44,7 @@ opened, which means that there is no clear-text device on the system.
 
 
 .. figure:: pic/luks-instance1.svg
+   :target: ../_images/luks-instance1.svg
 
    Instance diagram of closed LUKS format on a partition.
 
@@ -54,6 +55,7 @@ That means any data written to ``/dev/mapper/cleartext`` are automatically
 encrypted and stored on the partition.
 
 .. figure:: pic/luks-instance2.svg
+   :target: ../_images/luks-instance2.svg
 
    Instance diagram of opened LUKS format on a partition.
 
@@ -87,6 +89,11 @@ Use
 :ref:`CreateEncryptionFormat<LMI-ExtentEncryptionConfigurationService-CreateEncryptionFormat>`
 to create LUKS format, open it and create ext3 filesystem on it::
 
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    encryption_service = ns.LMI_ExtentEncryptionConfigurationService.first_instance()
+
     # Find the /dev/sda1 device
     sda1 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sdb1"})
 
@@ -118,6 +125,10 @@ can be used to destroy the clear-text device so only encrypted data is available
 The clear-text device must be unmounted first!
 
 ::
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    encryption_service = ns.LMI_ExtentEncryptionConfigurationService.first_instance()
 
     # Find the LUKS format
     sda1 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sdb1"})
@@ -140,6 +151,11 @@ methods.
 
 Following code can be used to replace weak 'opensesame' password with something
 stronger::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    encryption_service = ns.LMI_ExtentEncryptionConfigurationService.first_instance()
 
     # Find the LUKS format
     sda1 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sdb1"})

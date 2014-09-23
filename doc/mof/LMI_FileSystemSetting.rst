@@ -232,11 +232,14 @@ Inherited properties
 | ``uint16[]`` :ref:`SupportedAuthorizationProtocols <CIM-FileSystemSetting-SupportedAuthorizationProtocols>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
 | ``uint16[]`` :ref:`SupportedAuthenticationProtocols <CIM-FileSystemSetting-SupportedAuthenticationProtocols>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
 | ``string[]`` :ref:`FilenameReservedCharacterSet <CIM-FileSystemSetting-FilenameReservedCharacterSet>`
 | ``uint16[]`` :ref:`SupportedLockingSemantics <CIM-FileSystemSetting-SupportedLockingSemantics>`
 | ``string[]`` :ref:`OtherPersistenceTypes <CIM-FileSystemSetting-OtherPersistenceTypes>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
 | ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 
 Inherited methods

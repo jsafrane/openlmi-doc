@@ -90,6 +90,10 @@ Local properties
 
     A value of "Chassis Manager" indicates this instance represents a system dedicated to management of a blade chassis and its contained devices. This value would be used to represent a Shelf Controller. A "Chassis Manager" is an aggregation point for management and may rely on subordinate management controllers for the management of constituent parts. A value of "Host-based RAID Controller" indicates this instance represents a RAID storage controller contained within a host computer. A value of "Storage Device Enclosure" indicates this instance represents an enclosure that contains storage devices. A "Virtual Tape Library" is the emulation of a tape library by a Virtual Library System. A "Virtual Library System" uses disk storage to emulate tape libraries.A "FC Switch" indicates this instance is dedicated to switching layer 2 fibre channel frames. An "Ethernet Switch" indicates this instance is dedicated to switching layer 2 ethernet frames.
 
+    "Server" indicates that the system is an independent computer system whose primary purpose is to host services for other systems and devices to access; typically as in a stand-alone floor or rack-mounted system.
+
+    "Blade" indicates this instance is a computer system that fits into another chassis and depends on it for services, such as power, cooling, etc.
+
     
     ============ ==========================
     ValueMap     Values                    
@@ -133,6 +137,8 @@ Local properties
     36           Network PC/Thin Client    
     37           FC Switch                 
     38           Ethernet Switch           
+    39           Server                    
+    40           Blade                     
     ..           DMTF Reserved             
     32568..65535 Vendor Reserved           
     ============ ==========================
@@ -145,6 +151,7 @@ Local methods
 
 ``uint32`` **SetPowerState** (``uint32`` PowerState, ``datetime`` Time)
 
+    **Deprecated!** 
     Sets the power state of the computer. The use of this method has been deprecated. Instead, use the SetPowerState method in the associated PowerManagementService class.
 
     

@@ -1,12 +1,12 @@
-OpenLMI-Storage usage
-=====================
+Usage
+=====
 
 Block devices cannot be directly manipulated using intrinsic or extrinsic
 methods of :ref:`CIM_StorageExtent<CIM-StorageExtent>` or
 :ref:`LMI_VGStoragePool<LMI-VGStoragePool>`.
 
 Please use appropriate ``ConfigurationService`` to create, modify or delete devices
-or volume groups:
+or volume groups.
 
 
 .. toctree::

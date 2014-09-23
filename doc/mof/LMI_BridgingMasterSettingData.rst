@@ -18,13 +18,6 @@ Key properties
 Local properties
 ^^^^^^^^^^^^^^^^
 
-.. _LMI-BridgingMasterSettingData-HelloTime:
-
-``uint32`` **HelloTime**
-
-    The Spanning Tree Protocol (STP) hello time.
-
-    
 .. _LMI-BridgingMasterSettingData-InterfaceName:
 
 ``string`` **InterfaceName**
@@ -32,11 +25,11 @@ Local properties
     The name of the virtual in-kernel bridging network interface
 
     
-.. _LMI-BridgingMasterSettingData-ForwardDelay:
+.. _LMI-BridgingMasterSettingData-Priority:
 
-``uint32`` **ForwardDelay**
+``uint32`` **Priority**
 
-    The Spanning Tree Protocol (STP) forwarding delay.
+    Sets the Spanning Tree Protocol (STP) priority for this bridge. Lower values are 'better'; the lowest priority bridge will be elected the root bridge.
 
     
 .. _LMI-BridgingMasterSettingData-MaxAge:
@@ -53,11 +46,11 @@ Local properties
     The ethernet MAC address aging time.
 
     
-.. _LMI-BridgingMasterSettingData-Priority:
+.. _LMI-BridgingMasterSettingData-ForwardDelay:
 
-``uint32`` **Priority**
+``uint32`` **ForwardDelay**
 
-    Sets the Spanning Tree Protocol (STP) priority for this bridge. Lower values are 'better'; the lowest priority bridge will be elected the root bridge.
+    The Spanning Tree Protocol (STP) forwarding delay.
 
     
 .. _LMI-BridgingMasterSettingData-STP:
@@ -65,6 +58,13 @@ Local properties
 ``boolean`` **STP**
 
     Controls whether Spanning Tree Protocol (STP) is enabled for this bridge.
+
+    
+.. _LMI-BridgingMasterSettingData-HelloTime:
+
+``uint32`` **HelloTime**
+
+    The Spanning Tree Protocol (STP) hello time.
 
     
 
@@ -76,17 +76,24 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
-| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
-| ``uint16`` :ref:`IPv4Type <LMI-IPAssignmentSettingData-IPv4Type>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
-| ``uint16`` :ref:`ProtocolIFType <LMI-IPAssignmentSettingData-ProtocolIFType>`
 | ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
-| ``string`` :ref:`Caption <LMI-IPAssignmentSettingData-Caption>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressPrefixOriginDescription>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressSuffixOriginDescription>`
+| ``uint16`` :ref:`ProtocolIFType <LMI-IPAssignmentSettingData-ProtocolIFType>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPAssignmentSettingData-AddressPrefixOrigin>`
 | ``uint16`` :ref:`IPv6Type <LMI-IPAssignmentSettingData-IPv6Type>`
-| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
-| ``uint16`` :ref:`AddressOrigin <LMI-IPAssignmentSettingData-AddressOrigin>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPAssignmentSettingData-AddressSuffixOrigin>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
+| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string`` :ref:`Caption <LMI-IPAssignmentSettingData-Caption>`
+| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
+| ``uint16`` :ref:`IPv4Type <LMI-IPAssignmentSettingData-IPv4Type>`
+| ``uint16`` :ref:`AddressOrigin <LMI-IPAssignmentSettingData-AddressOrigin>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^

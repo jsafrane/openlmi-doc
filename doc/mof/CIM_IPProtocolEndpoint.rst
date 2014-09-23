@@ -37,6 +37,13 @@ Local properties
     2        IPv6   
     ======== =======
     
+.. _CIM-IPProtocolEndpoint-OtherAddressPrefixOriginDescription:
+
+``string`` **OtherAddressPrefixOriginDescription**
+
+    Description of the AddressPrefixOrigin when the AddressPrefixOrigin property has a value of "other"
+
+    
 .. _CIM-IPProtocolEndpoint-IPv6Address:
 
 ``string`` **IPv6Address**
@@ -80,6 +87,13 @@ Local properties
     32768..65535 Vendor Reserved      
     ============ =====================
     
+.. _CIM-IPProtocolEndpoint-OtherAddressSuffixOriginDescription:
+
+``string`` **OtherAddressSuffixOriginDescription**
+
+    Description of the AddressSuffixOrigin when the AddressSuffixOrigin property has a value of "other".
+
+    
 .. _CIM-IPProtocolEndpoint-ProtocolIFType:
 
 ``uint16`` **ProtocolIFType**
@@ -105,6 +119,67 @@ Local properties
 
     IPv6SubnetPrefixLength is used to identify the prefix length of the IPv6Address property that is used to specify a subnet
 
+    
+.. _CIM-IPProtocolEndpoint-AddressPrefixOrigin:
+
+``uint16`` **AddressPrefixOrigin**
+
+    An enumeration of subnet prefix origin for the IP Address. Refer IpAddressPrefixOriginTC from RFC 4293.
+
+    A value of 1 "other" indicate none of the other values is applicable.
+
+    A value of 2 "manual" indicate that the prefix is manually assigned.
+
+    A value of 3 "wellknown" indicate that prefix is a well known prefix.
+
+    A value of 4 "dhcp" indicate that prefix is from dhcp.
+
+    A value of 5 "routeradv" indicate that prefix is from router advertisement.
+
+    
+    ======== ===============
+    ValueMap Values         
+    ======== ===============
+    1        other          
+    2        manual         
+    3        wellknown      
+    4        dhcp           
+    5        routeradv      
+    ..       DMTF Reserved  
+    32768..  Vendor Reserved
+    ======== ===============
+    
+.. _CIM-IPProtocolEndpoint-AddressSuffixOrigin:
+
+``uint16`` **AddressSuffixOrigin**
+
+    An enumeration of suffix origin for the IP Address. Refer IpAddressOriginTC from RFC 4293.
+
+    A value of 1 "other" indicate none of the other values is applicable.
+
+    A value of 2 "manual" indicate that the suffix is manually assigned.
+
+    A value of 3 "wellknown" indicate that suffix is a well known suffix.
+
+    A value of 4 "dhcp" indicate that suffix is from dhcp.
+
+    A value of 5 "linklayer" indicate that suffix is from IPv6 stateless auto-configuration.
+
+    A value of 6 "random" indicate that suffix is chosen randomly.
+
+    
+    ======== ===============
+    ValueMap Values         
+    ======== ===============
+    1        other          
+    2        manual         
+    3        wellknown      
+    4        dhcp           
+    5        linklayer      
+    6        random         
+    ..       DMTF Reserved  
+    32768..  Vendor Reserved
+    ======== ===============
     
 .. _CIM-IPProtocolEndpoint-IPv4Address:
 
@@ -191,7 +266,6 @@ Inherited properties
 | ``datetime`` :ref:`TimeOfLastStateChange <CIM-ProtocolEndpoint-TimeOfLastStateChange>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
-| ``string`` :ref:`Description <CIM-ProtocolEndpoint-Description>`
 | ``uint16`` :ref:`TransitioningToState <CIM-EnabledLogicalElement-TransitioningToState>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 | ``string`` :ref:`NameFormat <CIM-ProtocolEndpoint-NameFormat>`
@@ -201,9 +275,10 @@ Inherited properties
 | ``string`` :ref:`Name <CIM-ProtocolEndpoint-Name>`
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
 | ``uint16`` :ref:`EnabledDefault <CIM-EnabledLogicalElement-EnabledDefault>`
-| ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
 | ``string`` :ref:`OtherTypeDescription <CIM-ProtocolEndpoint-OtherTypeDescription>`
 | ``uint16[]`` :ref:`AvailableRequestedStates <CIM-EnabledLogicalElement-AvailableRequestedStates>`
+| ``string`` :ref:`Description <CIM-ProtocolEndpoint-Description>`
+| ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
 | ``boolean`` :ref:`BroadcastResetSupported <CIM-ProtocolEndpoint-BroadcastResetSupported>`
 | ``uint16`` :ref:`ProtocolType <CIM-ProtocolEndpoint-ProtocolType>`
 | ``string`` :ref:`OtherEnabledState <CIM-EnabledLogicalElement-OtherEnabledState>`

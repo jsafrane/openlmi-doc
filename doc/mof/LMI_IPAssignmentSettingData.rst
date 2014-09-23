@@ -7,7 +7,7 @@ Class reference
 ===============
 Subclass of :ref:`CIM_IPAssignmentSettingData <CIM-IPAssignmentSettingData>`
 
-This SettingData instance is the aggregation point identifying an IP configuration. Multiple IP configurations could exist for a target. Each configuration is represented with an instance of IPAssignmentSettingData. The details of the IP configuration are defined by instances of sub-classes of this class (i.e. StaticIPAssignmentSettingData, DHCPSettingData, DNSSettingData). These instances are associated with the IPAssignmentSettingData instance using the OrderedComponent or ConcreteComponent associations. For example, a static IP configuration would be represented by an instance of IPAssignmentSettingData and an instance of StaticIPAssignmentSettingData associated via an instance of ConcreteComponent. A static IP configuration including DNS would be modeled using an instance of IPAssignmentSettingData, DNSSettingData, and StaticIPAssignmentSettingData. The DNSSettingData and StaticIPAssignmentSettingData instance would be associated with the IPAssignmentSettingData using instances of ConcreteComponent.
+This class and its sub-classes represents Internet Protocol (IP) related settings. When used as an accumulation of settings (AddressOrigin set to 11 "cumulative configuration"), this SettingData instance is the aggregation point identifying an IP configuration. Multiple IP configurations could exist for a target. Each configuration is represented with an instance of IPAssignmentSettingData. The details of the IP configuration are defined by instances of sub-classes of this class (i.e. StaticIPAssignmentSettingData, DHCPSettingData, DNSSettingData). These instances are associated with the IPAssignmentSettingData instance using the OrderedComponent or ConcreteComponent associations. For example, a static IP configuration would be represented by an instance of IPAssignmentSettingData and an instance of StaticIPAssignmentSettingData associated via an instance of ConcreteComponent. A static IP configuration including DNS would be modeled using an instance of IPAssignmentSettingData, DNSSettingData, and StaticIPAssignmentSettingData. The DNSSettingData and StaticIPAssignmentSettingData instance would be associated with the IPAssignmentSettingData using instances of ConcreteComponent.
 
 
 Key properties
@@ -137,12 +137,19 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
-| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
-| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPAssignmentSettingData-AddressPrefixOrigin>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressSuffixOriginDescription>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressPrefixOriginDescription>`
 | ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
-| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
+| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
+| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
+| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPAssignmentSettingData-AddressSuffixOrigin>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^

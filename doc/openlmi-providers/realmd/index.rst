@@ -1,5 +1,6 @@
-OpenLMI Realmd Provider documentation
-===========================================
+Realmd Provider
+===============
+
 OpenLMI Realmd is a CIM provider for managing the systems Active Direcory or
 Kerberos realms membership through the Realmd system service.
 
@@ -15,7 +16,7 @@ Contents:
 
 .. ifconfig:: includeClasses
 
-    OpenLMI Realmd CIM Classes:
+    CIM Classes:
 
     .. toctree::
        :maxdepth: 1

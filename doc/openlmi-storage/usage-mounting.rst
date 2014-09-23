@@ -62,7 +62,8 @@ The following diagram shows a local ext4 partition /dev/sda2 currently mounted
 at /boot. The filesystem is specified by its UUID. No persitent entry in
 /etc/fstab is managed.
 
-.. image:: pic/mounting-instance.svg
+.. figure:: pic/mounting-instance.svg
+   :target: ../_images/mounting-instance.svg
 
 The next figure shows a local ext3 partition /dev/sda1 mounted at /home and also
 made persistent in /etc/fstab, both with slightly different mount options. The
@@ -72,6 +73,7 @@ represented by two different
 instances.
 
 .. image:: pic/mounting-instance-2.svg
+   :target: ../_images/mounting-instance-2.svg
 
 The final diagram represents a state where a local ext4 partition /dev/sda4,
 filesystem of which is specified by its UUID, is mounted at /var/log and also
@@ -80,6 +82,7 @@ mount and the persistent entry) are the same, as is indicated by IsNext and
 IsCurrent being set to 1.
 
 .. image:: pic/mounting-instance-3.svg
+   :target: ../_images/mounting-instance-3.svg
 
 .. note::
 
@@ -203,11 +206,17 @@ to unmount a mount using the
 :ref:`DeleteMount <LMI-MountConfigurationService-DeleteMount>`
 .
 
+.. _example-create-mount:
+
 Example 1
 ---------
 This example demonstrates mounting /dev/sda partition with a customized setting.
 
 ::
+
+   # Connect to the remote system and prepare some local variables
+   connection = connect("remote.host.org", "root", "opensesame")
+   ns = connection.root.cimv2  # ns as NameSpace
 
    cap = ns.LMI_MountedFileSystemCapabilities.first_instance()
 
@@ -242,6 +251,9 @@ In this example, /mnt, that was mounted in Example 1, is unmounted.
 
 ::
 
+   # Connect to the remote system and prepare some local variables
+   connection = connect("remote.host.org", "root", "opensesame")
+   ns = connection.root.cimv2  # ns as NameSpace
    mount_service = ns.LMI_MountConfigurationService.first_instance()
 
    mnt = ns.LMI_MountedFileSystem.first_instance({"MountPointPath": "/mnt/test"})

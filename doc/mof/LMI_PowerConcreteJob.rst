@@ -38,7 +38,7 @@ Inherited properties
 | ``string`` :ref:`OtherRecoveryAction <CIM-Job-OtherRecoveryAction>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``datetime`` :ref:`UntilTime <CIM-Job-UntilTime>`
-| ``uint16`` :ref:`JobState <CIM-ConcreteJob-JobState>`
+| ``string`` :ref:`MethodName <CIM-ConcreteJob-MethodName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
 | ``sint8`` :ref:`RunDay <CIM-Job-RunDay>`
 | ``datetime`` :ref:`TimeOfLastStateChange <CIM-ConcreteJob-TimeOfLastStateChange>`
@@ -47,17 +47,18 @@ Inherited properties
 | ``uint16`` :ref:`RecoveryAction <CIM-Job-RecoveryAction>`
 | ``uint16`` :ref:`PercentComplete <CIM-Job-PercentComplete>`
 | ``uint16`` :ref:`LocalOrUtcTime <CIM-Job-LocalOrUtcTime>`
+| ``datetime`` :ref:`TimeBeforeRemoval <CIM-ConcreteJob-TimeBeforeRemoval>`
 | ``uint16`` :ref:`DetailedStatus <CIM-ManagedSystemElement-DetailedStatus>`
 | ``string`` :ref:`Name <CIM-ConcreteJob-Name>`
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
 | ``sint8`` :ref:`RunDayOfWeek <CIM-Job-RunDayOfWeek>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
-| ``string`` :ref:`JobStatus <CIM-Job-JobStatus>`
+| ``boolean`` :ref:`DeleteOnCompletion <CIM-ConcreteJob-DeleteOnCompletion>`
 | ``datetime`` :ref:`ElapsedTime <CIM-Job-ElapsedTime>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
-| ``boolean`` :ref:`DeleteOnCompletion <CIM-Job-DeleteOnCompletion>`
+| ``string`` :ref:`JobStatus <CIM-Job-JobStatus>`
 | ``datetime`` :ref:`TimeSubmitted <CIM-Job-TimeSubmitted>`
-| ``string`` :ref:`MethodName <CIM-ConcreteJob-MethodName>`
+| ``uint16`` :ref:`JobState <CIM-ConcreteJob-JobState>`
 | ``uint16`` :ref:`PrimaryStatus <CIM-ManagedSystemElement-PrimaryStatus>`
 | ``string`` :ref:`JobInParameters <CIM-ConcreteJob-JobInParameters>`
 | ``string`` :ref:`ErrorDescription <CIM-Job-ErrorDescription>`
@@ -69,13 +70,14 @@ Inherited properties
 | ``string`` :ref:`Notify <CIM-Job-Notify>`
 | ``datetime`` :ref:`StartTime <CIM-Job-StartTime>`
 | ``string`` :ref:`Owner <CIM-Job-Owner>`
-| ``datetime`` :ref:`TimeBeforeRemoval <CIM-ConcreteJob-TimeBeforeRemoval>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^
 
 | :ref:`RequestStateChange <CIM-ConcreteJob-RequestStateChange>`
-| :ref:`GetErrors <CIM-ConcreteJob-GetErrors>`
-| :ref:`KillJob <CIM-Job-KillJob>`
+| :ref:`ResumeWithAction <CIM-ConcreteJob-ResumeWithAction>`
 | :ref:`GetError <CIM-ConcreteJob-GetError>`
+| :ref:`KillJob <CIM-Job-KillJob>`
+| :ref:`ResumeWithInput <CIM-ConcreteJob-ResumeWithInput>`
+| :ref:`GetErrors <CIM-ConcreteJob-GetErrors>`
 

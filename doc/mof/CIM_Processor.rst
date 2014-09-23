@@ -169,6 +169,11 @@ Local properties
     72       AMD A-Series Processor                                         
     73       AMD G-Series Processor                                         
     74       AMD Z-Series Processor                                         
+    75       AMD R-Series Processor                                         
+    76       AMD Opteron(TM) 4300 Series Processor                          
+    77       AMD Opteron(TM) 6300 Series Processor                          
+    78       AMD Opteron(TM) 3300 Series Processor                          
+    79       AMD FirePro(TM) Series Processor                               
     80       SPARC Family                                                   
     81       SuperSPARC                                                     
     82       microSPARC II                                                  
@@ -184,6 +189,9 @@ Local properties
     99       68010                                                          
     100      68020                                                          
     101      68030                                                          
+    102      AMD Athlon(TM) X4 Quad-Core Processor Family                   
+    103      AMD Opteron(TM) X1000 Series Processor                         
+    104      AMD Opteron(TM) X2000 Series APU                               
     112      Hobbit Family                                                  
     120      Crusoe(TM) TM5000 Family                                       
     121      Crusoe(TM) TM3000 Family                                       
@@ -376,6 +384,10 @@ Local properties
     40       Socket FS2            
     41       Socket FM1            
     42       Socket FM2            
+    43       Socket LGA2011-3      
+    44       Socket LGA1356-3      
+    45       Socket LGA1150        
+    46       Socket BGA1168        
     ======== ======================
     
 .. _CIM-Processor-EnabledProcessorCharacteristics:

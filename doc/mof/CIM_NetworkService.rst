@@ -25,6 +25,7 @@ Local properties
 
 ``string[]`` **StartupConditions**
 
+    **Deprecated!** 
     This is a free-form array of strings that specify any specific pre-conditions that must be met in order for this service to start correctly. It was expected that subclasses would refine the inherited StartService() method to suit their specific needs. To-date, this refinement has not been necessary. Also, the property is not very useful, since it is not standardized. If this was a necessary construct, then it would be required higher in the inheritance hierarchy (on Service). The latter has not proven true. Therefore, the property is deprecated.
 
     
@@ -47,6 +48,7 @@ Local properties
 
 ``string[]`` **Keywords**
 
+    **Deprecated!** 
     This is a free-form array of strings that provide descriptive words and phrases that can be used in queries. To-date, this property has not been implemented, since it is not standardized. Also, if this was a necessary query construct, then it would be required higher in the inheritance hierarchy. The latter has not proven necessary. Therefore, the property is deprecated.
 
     
@@ -65,6 +67,7 @@ Inherited properties
 | ``string`` :ref:`InstanceID <CIM-ManagedElement-InstanceID>`
 | ``uint16`` :ref:`CommunicationStatus <CIM-ManagedSystemElement-CommunicationStatus>`
 | ``string`` :ref:`SystemName <CIM-Service-SystemName>`
+| ``string`` :ref:`LoSID <CIM-Service-LoSID>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
@@ -77,6 +80,7 @@ Inherited properties
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
 | ``uint16`` :ref:`EnabledDefault <CIM-EnabledLogicalElement-EnabledDefault>`
 | ``uint16`` :ref:`EnabledState <CIM-EnabledLogicalElement-EnabledState>`
+| ``string`` :ref:`LoSOrgID <CIM-Service-LoSOrgID>`
 | ``string`` :ref:`PrimaryOwnerContact <CIM-Service-PrimaryOwnerContact>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
 | ``string`` :ref:`StartMode <CIM-Service-StartMode>`

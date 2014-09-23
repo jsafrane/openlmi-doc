@@ -26,6 +26,20 @@ Key properties
 Local properties
 ^^^^^^^^^^^^^^^^
 
+.. _CIM-SettingData-SoOrgID:
+
+``string`` **SoOrgID**
+
+    If not Null, the CIM_SettingData instance is being used to represent an ITIL element: either a service option, a service level requirement, or a service level target. When not Null, the value of SoOrgID shall be a unique identifier for the organization that specifies the value of SoID.
+
+    
+.. _CIM-SettingData-SoID:
+
+``string`` **SoID**
+
+    If not Null, the CIM_SettingData instance is being used to represent an ITIL element: either a service option, a service level requirement, or a service level target. The value SoID must be unique in the context of an Organization unique identifier specified in SoOrgID.
+
+    
 .. _CIM-SettingData-ElementName:
 
 ``string`` **ElementName**
@@ -48,6 +62,19 @@ Local properties
     2        Changeable - Persistent    
     3        Not Changeable - Transient 
     ======== ===========================
+    
+.. _CIM-SettingData-ComponentSetting:
+
+``string[]`` **ComponentSetting**
+
+    The value of each CIM_ComponentSetting instance includes a CIM_SettingData instance that specifies further values for this CIM_SettingData instance. The values are interpreted according to the values of the Policy, ValueRole, and ValueRange properties included in each CIM_ComponentSetting instance.
+
+    
+
+    Note: If SoID is not null, then the embedded ComponentSetting elements may be interpreted as ITIL Service Level Targets.
+
+    Note: For CIM v3, the type of ComponentSetting will be CIM_ComponentSetting. This is not represented as an EmbeddedInstance in CIM v2 to avoid a circular dependency that CIM v2 compilers cannot handle.
+
     
 .. _CIM-SettingData-InstanceID:
 

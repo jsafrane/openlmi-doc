@@ -142,6 +142,13 @@ Local properties
     The remaining usable capacity after the allocation of StorageVolumes, LogicalDisks, or child Storage Pools. This property is maintained here to provide efficient access to this information. However, note that it is possible to compute RemainingManagedSpace as (TotalManagedSpace minus the sum of SpaceConsumed from all of the AllocatedFromStoragePool references from this StoragePool). Note that SpaceConsumed remains useful to determine the amount of capacity consumed by a particular allocated element.
 
     
+.. _CIM-StoragePool-ReservedSpace:
+
+``uint64`` **ReservedSpace**
+
+    The amount of capacity used by the storage pool to store information about the configuration of the storage pool. The space is not included in the TotalManagedSpace of the storage pool.
+
+    
 .. _CIM-StoragePool-SpaceLimit:
 
 ``uint64`` **SpaceLimit**
@@ -154,6 +161,13 @@ Local properties
 ``uint64`` **ThinProvisionMetaDataSpace**
 
     The size of metadata consumed by this storage pool. Only defined if the pool is thin provisioned.
+
+    
+.. _CIM-StoragePool-ElementsShareSpace:
+
+``boolean`` **ElementsShareSpace**
+
+    If true, it indicates elements allocated from the storage pool are sharing space from the storage pool. For example, multiple snapshots "allocated" from a storage pool, point to the same blocks of the storage pool. As another example, elements utilizing de-duplication technology refer to a shared copy of the data stored in the storage pool.
 
     
 
@@ -179,7 +193,7 @@ Local methods
     **Parameters**
     
         *IN* ``uint16`` **ElementType**
-            The type of element for which supported sizes are reported. The Thin Provision values are only supported when the Thin Provisioning Profile is supported; the resulting StorageVolues/LogicalDisk shall have ThinlyPprovisioned set to true.
+            The type of element for which supported sizes are reported. The Thin Provision values are only supported when the Thin Provisioning Profile is supported; the resulting StorageVolues/LogicalDisk shall have ThinlyProvisioned set to true.
 
             
             ======== =============================
@@ -223,7 +237,7 @@ Local methods
     **Parameters**
     
         *IN* ``uint16`` **ElementType**
-            The type of element for which supported size ranges are reported. The Thin Provision values are only supported when the Thin Provisioning Profile is supported; the resulting StorageVolues/LogicalDisk shall have ThinlyPprovisioned set to true.
+            The type of element for which supported size ranges are reported. The Thin Provision values are only supported when the Thin Provisioning Profile is supported; the resulting StorageVolues/LogicalDisk shall have ThinlyProvisioned set to true.
 
             
             ======== =============================

@@ -18,6 +18,7 @@ Members of the MD RAID are associated to the
 Following instance diagram shows RAID5 ``/dev/md/myRAID`` with three devices:
 
 .. figure:: pic/raid5-instance.svg
+   :target: ../_images/raid5-instance.svg
 
 Note the :ref:`Level <LMI-MDRAIDStorageExtent-Level>` property in
 :ref:`LMI_MDRAIDStorageExtent <LMI-MDRAIDStorageExtent>`, which was added to
@@ -55,14 +56,21 @@ Useful methods
 Use cases
 ---------
 
+.. _example-create-mdraid:
+
 Create MD RAID
 ^^^^^^^^^^^^^^
 
 Use
 :ref:`CreateOrModifyMDRAID <LMI-StorageConfigurationService-CreateOrModifyMDRAID>`
 method. Following example creates MD RAID level 5 named '/dev/md/myRAID' with
-three members:: 
-    
+three members::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    storage_service = ns.LMI_StorageConfigurationService.first_instance()
+
     # Find the devices we want to add to MD RAID
     # (filtering one CIM_StorageExtent.instances()
     # call would be faster, but this is easier to read)
@@ -89,8 +97,13 @@ Create MD RAID in SMI-S way
 SMI-S applications can use
 :ref:`CreateOrModifyElementFromElements <LMI-StorageConfigurationService-CreateOrModifyElementFromElements>`
 method. Following example creates MD RAID level 5 named '/dev/md/myRAID' with
-three members:: 
-    
+three members::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    storage_service = ns.LMI_StorageConfigurationService.first_instance()
+
     # Find the devices we want to add to MD RAID
     # (filtering one CIM_StorageExtent.instances()
     # call would be faster, but this is easier to read)
@@ -126,6 +139,11 @@ RAID extent.
 
 Following code lists all members od ``/dev/md/myRAID``::
 
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    storage_service = ns.LMI_StorageConfigurationService.first_instance()
+
     # Find the disk
     md = ns.LMI_StorageExtent.first_instance({"Name": "/dev/md/myRAID"})
 
@@ -137,6 +155,11 @@ Delete MD RAID
 ^^^^^^^^^^^^^^
 
 Call :ref:`DeleteMDRAID <LMI-StorageConfigurationService-DeleteMDRAID>` method::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    storage_service = ns.LMI_StorageConfigurationService.first_instance()
 
     md = ns.LMI_MDRAIDStorageExtent.first_instance({"Name": "/dev/md/myRAID"})
     (ret, outparams, err) = storage_service.SyncDeleteMDRAID(TheElement=md)

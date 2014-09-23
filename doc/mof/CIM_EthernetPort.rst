@@ -25,7 +25,7 @@ Local properties
 
 ``uint16[]`` **Capabilities**
 
-    Capabilities of the EthernetPort. For example, the Device might support AlertOnLan, WakeOnLan, Load Balancing, or FailOver. If failover or load balancing capabilities are listed, a SpareGroup (failover) or ExtraCapacityGroup (load balancing) should also be defined to completely describe the capability. LLDP indicates that this Ethernet Port is capable of supporting Link Layer Discovery Protocol (LLDP) communications. PoE indicates that this Ethernet Port is capable of supporting Power over Ethernet (PoE). EEE indicates that this Ethernet Port is capable of supporting Energy Efficient Ethernet (EEE). DCE indicates that this Ethernet Port is capable of supporting Data Center Ethernet. Data Center Ethernet requires support for Prioritiy-Based Flow Control (PFC), Enhanced Transmission Selection (ETS), and Data Center Bridging eXchange (DCBX) protocol.
+    Capabilities of the EthernetPort. For example, the Device might support AlertOnLan, WakeOnLan, Load Balancing, or FailOver. If failover or load balancing capabilities are listed, a SpareGroup (failover) or ExtraCapacityGroup (load balancing) should also be defined to completely describe the capability. LLDP indicates that this Ethernet Port is capable of supporting Link Layer Discovery Protocol (LLDP) communications. PoE indicates that this Ethernet Port is capable of supporting Power over Ethernet (PoE). EEE indicates that this Ethernet Port is capable of supporting Energy Efficient Ethernet (EEE). DCE indicates that this Ethernet Port is capable of supporting Data Center Ethernet. Data Center Ethernet requires support for Prioritiy-Based Flow Control (PFC), Enhanced Transmission Selection (ETS), and Data Center Bridging eXchange (DCBX) protocol. VDP indicates that this Ethernet Port is capable of supporting Virtual Station Interface (VSI) Discovery Protocol. S-Channel indicates that this Ethernet Port is capable of supporting S-Channel.
 
     
     ======== =============
@@ -41,6 +41,8 @@ Local properties
     7        PoE          
     8        EEE          
     9        DCE          
+    10       VDP          
+    11       S-Channel    
     ..       DMTF Reserved
     ======== =============
     
@@ -94,6 +96,9 @@ Local properties
     6        LLDP         
     7        PoE          
     8        EEE          
+    9        DCE          
+    10       VDP          
+    11       S-Channel    
     ..       DMTF Reserved
     ======== =============
     
@@ -163,6 +168,18 @@ Local properties
     110          10GBase-ER              
     111          10GBase-EW              
     112          10GBase-LRM             
+    200          40GBase-KR4             
+    201          40GBase-CR4             
+    202          40GBase-SR4             
+    203          40GBase-FR              
+    204          40GBase-LR4             
+    300          100GBase-CR10           
+    301          100GBase-SR10           
+    302          100GBase-LR4            
+    303          100GBase-ER4            
+    304          100GBase-KR4            
+    305          100GBase-CR4            
+    306          100GBase-KP4            
     16000..65535 Vendor Reserved         
     ============ ========================
     

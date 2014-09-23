@@ -62,15 +62,21 @@ Local properties
     "Delete" indicates that associated Accounts may be deleted.
 
     
-    ============== ===============
-    ValueMap       Values         
-    ============== ===============
-    2              Create         
-    3              Modify         
-    4              Delete         
-    ..             DMTF Reserved  
-    0x8000..0xFFFF Vendor Reserved
-    ============== ===============
+    ============== ===========================
+    ValueMap       Values                     
+    ============== ===========================
+    2              Create                     
+    3              Modify                     
+    4              Delete                     
+    5              CreateUserContact          
+    6              CreateUserContactByIdentity
+    7              ModifyUserContact          
+    8              DeleteUserContact          
+    9              GetAccount                 
+    10             GetUserContact             
+    ..             DMTF Reserved              
+    0x8000..0xFFFF Vendor Reserved            
+    ============== ===========================
     
 .. _CIM-AccountManagementCapabilities-SupportedUserPasswordEncryptionAlgorithms:
 

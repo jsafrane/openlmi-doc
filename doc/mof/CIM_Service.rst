@@ -21,18 +21,18 @@ Key properties
 Local properties
 ^^^^^^^^^^^^^^^^
 
-.. _CIM-Service-SystemCreationClassName:
-
-``string`` **SystemCreationClassName**
-
-    The CreationClassName of the scoping System.
-
-    
 .. _CIM-Service-SystemName:
 
 ``string`` **SystemName**
 
     The Name of the scoping System.
+
+    
+.. _CIM-Service-LoSID:
+
+``string`` **LoSID**
+
+    If not Null, the CIM_Service instance represents a line of service, as defined by ITIL, identified by the value of LoSID, which must be unique in the context of an unique identifier for an Organization specified in LoSOrgID.
 
     
 .. _CIM-Service-Started:
@@ -49,6 +49,20 @@ Local properties
     The Name property uniquely identifies the Service and provides an indication of the functionality that is managed. This functionality is described in more detail in the Description property of the object.
 
     
+.. _CIM-Service-LoSOrgID:
+
+``string`` **LoSOrgID**
+
+    If not null, this CIM_Service instance represents an ITIL line of service and the value of LoSOrgID shall be a unique identifier for the organization that defines the value of LoSID.
+
+    
+.. _CIM-Service-PrimaryOwnerContact:
+
+``string`` **PrimaryOwnerContact**
+
+    A string that provides information on how the primary owner of the Service can be reached (for example, phone number, e-mail address, and so on).
+
+    
 .. _CIM-Service-StartMode:
 
 ``string`` **StartMode**
@@ -58,11 +72,11 @@ Local properties
     Deprecated description: StartMode is a string value that indicates whether the Service is automatically started by a System, an Operating System, and so on, or is started only upon request.
 
     
-.. _CIM-Service-PrimaryOwnerContact:
+.. _CIM-Service-SystemCreationClassName:
 
-``string`` **PrimaryOwnerContact**
+``string`` **SystemCreationClassName**
 
-    A string that provides information on how the primary owner of the Service can be reached (for example, phone number, e-mail address, and so on).
+    The CreationClassName of the scoping System.
 
     
 .. _CIM-Service-CreationClassName:
@@ -101,6 +115,7 @@ Local methods
 
 ``uint32`` **StopService** ()
 
+    **Deprecated!** 
     The StopService method places the Service in the stopped state. Note that the function of this method overlaps with the RequestedState property. RequestedState was added to the model to maintain a record (such as a persisted value) of the last state request. Invoking the StopService method should set the RequestedState property appropriately. The method returns an integer value of 0 if the Service was successfully stopped, 1 if the request is not supported, and any other number to indicate an error. In a subclass, the set of possible return codes could be specified using a ValueMap qualifier on the method. The strings to which the ValueMap contents are translated can also be specified in the subclass as a Values array qualifier. 
 
     
@@ -160,9 +175,9 @@ Inherited properties
 
 | ``uint16`` :ref:`RequestedState <CIM-EnabledLogicalElement-RequestedState>`
 | ``uint16`` :ref:`HealthState <CIM-ManagedSystemElement-HealthState>`
+| ``string[]`` :ref:`StatusDescriptions <CIM-ManagedSystemElement-StatusDescriptions>`
 | ``string`` :ref:`InstanceID <CIM-ManagedElement-InstanceID>`
 | ``uint16`` :ref:`CommunicationStatus <CIM-ManagedSystemElement-CommunicationStatus>`
-| ``string[]`` :ref:`StatusDescriptions <CIM-ManagedSystemElement-StatusDescriptions>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`

@@ -74,8 +74,10 @@ Inherited properties
 Inherited methods
 ^^^^^^^^^^^^^^^^^
 
-| :ref:`GetErrors <LMI-ConcreteJob-GetErrors>`
 | :ref:`RequestStateChange <LMI-ConcreteJob-RequestStateChange>`
-| :ref:`KillJob <CIM-Job-KillJob>`
+| :ref:`ResumeWithAction <CIM-ConcreteJob-ResumeWithAction>`
 | :ref:`GetError <LMI-ConcreteJob-GetError>`
+| :ref:`KillJob <CIM-Job-KillJob>`
+| :ref:`ResumeWithInput <CIM-ConcreteJob-ResumeWithInput>`
+| :ref:`GetErrors <LMI-ConcreteJob-GetErrors>`
 

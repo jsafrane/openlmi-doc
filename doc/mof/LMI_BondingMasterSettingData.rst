@@ -34,18 +34,18 @@ Local properties
     The name of the virtual in-kernel bonding network interface
 
     
-.. _LMI-BondingMasterSettingData-ARPInterval:
-
-``uint64`` **ARPInterval**
-
-    Specifies the ARP link monitoring frequency in milliseconds. A value of 0 disables ARP monitoring. The default value is 0.
-
-    
 .. _LMI-BondingMasterSettingData-DownDelay:
 
 ``uint64`` **DownDelay**
 
     Specifies the time, in milliseconds, to wait before disabling a slave after a link failure has been detected.  This option is only valid for the miimon link monitor. The downdelay value should be a multiple of the miimon value; if not, it will be rounded down to the nearest multiple. The default value is 0.
+
+    
+.. _LMI-BondingMasterSettingData-UpDelay:
+
+``uint64`` **UpDelay**
+
+    Specifies the time, in milliseconds, to wait before enabling a slave after a link recovery has been detected. This option is only valid for the miimon link monitor. The updelay value should be a multiple of the miimon value; if not, it will be rounded down to the nearest multiple. The default value is 0.
 
     
 .. _LMI-BondingMasterSettingData-Mode:
@@ -81,18 +81,18 @@ Local properties
     6        BalanceALB  
     ======== ============
     
-.. _LMI-BondingMasterSettingData-UpDelay:
-
-``uint64`` **UpDelay**
-
-    Specifies the time, in milliseconds, to wait before enabling a slave after a link recovery has been detected. This option is only valid for the miimon link monitor. The updelay value should be a multiple of the miimon value; if not, it will be rounded down to the nearest multiple. The default value is 0.
-
-    
 .. _LMI-BondingMasterSettingData-ARPIPTarget:
 
 ``string[]`` **ARPIPTarget**
 
     Specifies the IP addresses to use as ARP monitoring peers when arp_interval is > 0. The default value is no IP addresses.
+
+    
+.. _LMI-BondingMasterSettingData-ARPInterval:
+
+``uint64`` **ARPInterval**
+
+    Specifies the ARP link monitoring frequency in milliseconds. A value of 0 disables ARP monitoring. The default value is 0.
 
     
 
@@ -104,17 +104,24 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
-| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
-| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
-| ``uint16`` :ref:`IPv4Type <LMI-IPAssignmentSettingData-IPv4Type>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
-| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
-| ``string`` :ref:`Caption <LMI-IPAssignmentSettingData-Caption>`
+| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressPrefixOriginDescription>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
-| ``uint16`` :ref:`IPv6Type <LMI-IPAssignmentSettingData-IPv6Type>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressSuffixOriginDescription>`
 | ``uint16`` :ref:`ProtocolIFType <LMI-IPAssignmentSettingData-ProtocolIFType>`
-| ``uint16`` :ref:`AddressOrigin <LMI-IPAssignmentSettingData-AddressOrigin>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPAssignmentSettingData-AddressPrefixOrigin>`
+| ``uint16`` :ref:`IPv6Type <LMI-IPAssignmentSettingData-IPv6Type>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPAssignmentSettingData-AddressSuffixOrigin>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
+| ``string`` :ref:`Caption <LMI-IPAssignmentSettingData-Caption>`
+| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
+| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
+| ``uint16`` :ref:`IPv4Type <LMI-IPAssignmentSettingData-IPv4Type>`
+| ``uint16`` :ref:`AddressOrigin <LMI-IPAssignmentSettingData-AddressOrigin>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^

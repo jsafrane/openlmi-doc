@@ -48,16 +48,23 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
-| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
-| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressSuffixOriginDescription>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressPrefixOriginDescription>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPAssignmentSettingData-AddressPrefixOrigin>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
 | ``uint16`` :ref:`ProtocolIFType <LMI-IPAssignmentSettingData-ProtocolIFType>`
 | ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
+| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``string`` :ref:`Caption <LMI-IPAssignmentSettingData-Caption>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
 | ``uint16`` :ref:`IPv6Type <LMI-IPAssignmentSettingData-IPv6Type>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPAssignmentSettingData-AddressSuffixOrigin>`
 | ``uint16`` :ref:`AddressOrigin <LMI-IPAssignmentSettingData-AddressOrigin>`
+| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
 | ``uint16`` :ref:`IPv4Type <LMI-IPAssignmentSettingData-IPv4Type>`
 
 Inherited methods

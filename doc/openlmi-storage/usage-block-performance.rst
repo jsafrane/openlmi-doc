@@ -12,6 +12,7 @@ Following instance diagram shows two block devices and their associated
 statistics:
 
 .. figure:: pic/block-performance.svg
+   :target: ../_images/block-performance.svg
 
 There are many more classes related to block device performance, but these are
 provided mainly for compatibility with SMI-S. See following instance diagram,
@@ -19,6 +20,7 @@ which shows the same two block devices, but now with all SMI-S classes:
 
 
 .. figure:: pic/block-performance-full.svg
+   :target: ../_images/block-performance-full.svg
 
 The only useful method is
 :ref:`LMI_BlockStatisticsService.GetStatisticsCollection<LMI-BlockStatisticsService-GetStatisticsCollection>`,
@@ -59,6 +61,10 @@ Get I/O statistics of a block device
 Find :ref:`LMI_BlockStorageStatisticalData<LMI-BlockStorageStatisticalData>`
 associated to appropriate :ref:`CIM_StorageExtent<CIM-StorageExtent>`::
 
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+
     # Find the /dev/sda3 device
     sda3 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sda3"})
 
@@ -73,6 +79,11 @@ Enumerate all
 :ref:`LMI_BlockStorageStatisticalData<LMI-BlockStorageStatisticalData>`
 instances on the system::
 
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+
+    # Find all LMI_BlockStorageStatisticalData instances
     stats = ns.LMI_BlockStorageStatisticalData.instances()
     for stat in stats:
         print "Device", stat.ElementName, "KBytesRead:", stat.KBytesRead
@@ -87,6 +98,10 @@ Get I/O statistics of all block devices II
 Use
 :ref:`LMI_BlockStatisticsService.GetStatisticsCollection<LMI-BlockStatisticsService-GetStatisticsCollection>`
 method to get all statistics in one method call::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
 
     # Print column headers
     manifest = ns.LMI_BlockStatisticsManifest.first_instance()

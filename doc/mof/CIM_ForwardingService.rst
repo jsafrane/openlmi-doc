@@ -25,13 +25,6 @@ Key properties
 Local properties
 ^^^^^^^^^^^^^^^^
 
-.. _CIM-ForwardingService-OtherProtocolType:
-
-``string`` **OtherProtocolType**
-
-    This defines the type of protocol that is being forwarded when the value of the ProtocolType attribute is 1 (i.e., "Other"). This provides for future extensibility.
-
-    
 .. _CIM-ForwardingService-ProtocolType:
 
 ``uint16`` **ProtocolType**
@@ -64,6 +57,13 @@ Local properties
     19       Fibre Channel
     ======== =============
     
+.. _CIM-ForwardingService-OtherProtocolType:
+
+``string`` **OtherProtocolType**
+
+    This defines the type of protocol that is being forwarded when the value of the ProtocolType attribute is 1 (i.e., "Other"). This provides for future extensibility.
+
+    
 
 Local methods
 ^^^^^^^^^^^^^
@@ -79,9 +79,11 @@ Inherited properties
 | ``string`` :ref:`InstanceID <CIM-ManagedElement-InstanceID>`
 | ``uint16`` :ref:`CommunicationStatus <CIM-ManagedSystemElement-CommunicationStatus>`
 | ``string`` :ref:`SystemName <CIM-Service-SystemName>`
+| ``string`` :ref:`LoSID <CIM-Service-LoSID>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``uint16`` :ref:`TransitioningToState <CIM-EnabledLogicalElement-TransitioningToState>`
 | ``boolean`` :ref:`Started <CIM-Service-Started>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 | ``datetime`` :ref:`TimeOfLastStateChange <CIM-EnabledLogicalElement-TimeOfLastStateChange>`
@@ -91,13 +93,13 @@ Inherited properties
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
 | ``uint16`` :ref:`EnabledDefault <CIM-EnabledLogicalElement-EnabledDefault>`
 | ``uint16`` :ref:`EnabledState <CIM-EnabledLogicalElement-EnabledState>`
+| ``string`` :ref:`LoSOrgID <CIM-Service-LoSOrgID>`
 | ``string`` :ref:`PrimaryOwnerContact <CIM-Service-PrimaryOwnerContact>`
 | ``string[]`` :ref:`StartupConditions <CIM-NetworkService-StartupConditions>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
 | ``string`` :ref:`StartMode <CIM-Service-StartMode>`
 | ``uint16[]`` :ref:`AvailableRequestedStates <CIM-EnabledLogicalElement-AvailableRequestedStates>`
 | ``string[]`` :ref:`StartupParameters <CIM-NetworkService-StartupParameters>`
-| ``uint16`` :ref:`TransitioningToState <CIM-EnabledLogicalElement-TransitioningToState>`
 | ``string`` :ref:`OtherEnabledState <CIM-EnabledLogicalElement-OtherEnabledState>`
 | ``uint16[]`` :ref:`OperationalStatus <CIM-ManagedSystemElement-OperationalStatus>`
 | ``uint16`` :ref:`OperatingStatus <CIM-ManagedSystemElement-OperatingStatus>`

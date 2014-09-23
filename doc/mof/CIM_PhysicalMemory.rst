@@ -126,7 +126,8 @@ Local properties
     23           FB-DIMM         
     24           DDR3            
     25           FBD2            
-    26..32567    DMTF Reserved   
+    26           DDR4            
+    27..32567    DMTF Reserved   
     32568..65535 Vendor Reserved 
     ============ ================
     

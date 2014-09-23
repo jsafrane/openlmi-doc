@@ -164,6 +164,7 @@ Local properties
 
 ``string`` **StartMode**
 
+    **Deprecated!** 
     Note: The use of this element is deprecated in lieu of the EnabledDefault property that is inherited from EnabledLogicalElement. The EnabledLogicalElement addresses the same semantics. The change to a uint16 data type was discussed when CIM V2.0 was defined. However, existing V1.0 implementations used the string property. To remain compatible with those implementations, StartMode was grandfathered into the schema. Use of the deprecated qualifier allows the maintenance of the existing property but also permits an improved, clarified definition using EnabledDefault. 
 
     Deprecated description: StartMode is a string value that indicates whether the Service is automatically started by a System, an Operating System, and so on, or is started only upon request.
@@ -981,48 +982,6 @@ Local methods
             
         
     
-    .. _LMI-StorageConfigurationService-LMI-ScsiScan:
-
-``uint32`` **LMI_ScsiScan** (:ref:`CIM_ConcreteJob <CIM-ConcreteJob>` Job)
-
-    This method requests that the system rescan SCSI devices for changes in their configuration. This method may also be used on a storage appliance to force rescanning of attached SCSI devices. 
-
-    
-
-    This operation can be disruptive.
-
-    
-
-    The method is LMI version of DMTF's ScsiScan(), just with '4096' as 'Method Parameters Checked - Job Started' return value. Also, the method parameters were trimmed, we may extend it to support complete DMTF ScsiScan parameters.
-
-    
-    ============ ========================================
-    ValueMap     Values                                  
-    ============ ========================================
-    0            Success                                 
-    1            Not Supported                           
-    2            Unknown                                 
-    3            Timeout                                 
-    4            Failed                                  
-    5            Invalid Parameter                       
-    6..4095      DMTF Reserved                           
-    4096         Method Parameters Checked - Job Started 
-    4097         Invalid Initiator                       
-    4098         No matching target found                
-    4099         No matching LUs found                   
-    4100         Prohibited by name binding configuration
-    ..           DMTF Reserved                           
-    32768..65535 Vendor Specific                         
-    ============ ========================================
-    
-    **Parameters**
-    
-        *OUT* :ref:`CIM_ConcreteJob <CIM-ConcreteJob>` **Job**
-            Reference to the job (may be null if job completed).
-
-            
-        
-    
 
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
@@ -1032,6 +991,7 @@ Inherited properties
 | ``string`` :ref:`InstanceID <CIM-ManagedElement-InstanceID>`
 | ``uint16`` :ref:`CommunicationStatus <CIM-ManagedSystemElement-CommunicationStatus>`
 | ``string`` :ref:`SystemName <CIM-Service-SystemName>`
+| ``string`` :ref:`LoSID <CIM-Service-LoSID>`
 | ``string`` :ref:`Status <CIM-ManagedSystemElement-Status>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
@@ -1040,6 +1000,7 @@ Inherited properties
 | ``uint16`` :ref:`DetailedStatus <CIM-ManagedSystemElement-DetailedStatus>`
 | ``string`` :ref:`Name <CIM-Service-Name>`
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
+| ``string`` :ref:`LoSOrgID <CIM-Service-LoSOrgID>`
 | ``string`` :ref:`PrimaryOwnerContact <CIM-Service-PrimaryOwnerContact>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
 | ``uint16[]`` :ref:`AvailableRequestedStates <CIM-EnabledLogicalElement-AvailableRequestedStates>`
@@ -1057,6 +1018,7 @@ Inherited methods
 | :ref:`CreateOrModifyReplicationPipe <CIM-StorageConfigurationService-CreateOrModifyReplicationPipe>`
 | :ref:`RequestStateChange <CIM-EnabledLogicalElement-RequestStateChange>`
 | :ref:`AttachOrModifyReplica <CIM-StorageConfigurationService-AttachOrModifyReplica>`
+| :ref:`CreateElementsFromStoragePools <CIM-StorageConfigurationService-CreateElementsFromStoragePools>`
 | :ref:`ScsiScan <CIM-StorageConfigurationService-ScsiScan>`
 | :ref:`StopService <CIM-Service-StopService>`
 | :ref:`CreateReplicationBuffer <CIM-StorageConfigurationService-CreateReplicationBuffer>`

@@ -328,29 +328,40 @@ Local properties
     The Usage value to be used when creating a new element that is derived from a StorageExtent.
 
     
-    ============ ==============================================
-    ValueMap     Values                                        
-    ============ ==============================================
-    1            Other                                         
-    2            Unrestricted                                  
-    3            Reserved for ComputerSystem (the block server)
-    4            Reserved by Replication Services              
-    5            Reserved by Migration Services                
-    6            Local Replica Source                          
-    7            Remote Replica Source                         
-    8            Local Replica Target                          
-    9            Remote Replica Target                         
-    10           Local Replica Source or Target                
-    11           Remote Replica Source or Target               
-    12           Delta Replica Target                          
-    13           Element Component                             
-    14           Reserved as Pool Contributor                  
-    15           Composite Volume Member                       
-    16           Composite LogicalDisk Member                  
-    17           Reserved for Sparing                          
-    ..           DMTF Reserved                                 
-    32768..65535 Vendor Reserved                               
-    ============ ==============================================
+
+    "Reserved to be Unrestricted Pool Contributor": Indicates the element is available and it is intended to be used as an Unrestricted Pool Contributor. Once such element is in use, the elements Usage value will change to "In use as Unrestricted Pool Contributor".
+
+    
+    ============ ==================================================
+    ValueMap     Values                                            
+    ============ ==================================================
+    1            Other                                             
+    2            Unrestricted                                      
+    3            Reserved for ComputerSystem (the block server)    
+    4            Reserved by Replication Services                  
+    5            Reserved by Migration Services                    
+    6            Local Replica Source                              
+    7            Remote Replica Source                             
+    8            Local Replica Target                              
+    9            Remote Replica Target                             
+    10           Local Replica Source or Target                    
+    11           Remote Replica Source or Target                   
+    12           Delta Replica Target                              
+    13           Element Component                                 
+    14           Reserved to be Unrestricted Pool Contributor      
+    15           Composite Volume Member                           
+    16           Composite LogicalDisk Member                      
+    17           Reserved for Sparing                              
+    18           In use as Unrestricted Pool Contributor           
+    19           Reserved to be Delta Replica Pool Contributor     
+    20           Reserved to be Local Replication Pool Contributor 
+    21           Reserved to be Remote Replication Pool Contributor
+    22           In use as Delta Replica Pool Contributor          
+    23           In use as Local Replication Pool Contributor      
+    24           In use as Remote Replication Pool Contributor     
+    ..           DMTF Reserved                                     
+    32768..65535 Vendor Reserved                                   
+    ============ ==================================================
     
 .. _CIM-StorageSetting-ExtentStripeLengthMin:
 
@@ -542,9 +553,12 @@ Inherited properties
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
 | ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^

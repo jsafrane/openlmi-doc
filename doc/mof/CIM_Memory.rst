@@ -58,6 +58,7 @@ Local properties
 
 ``boolean`` **CorrectableError**
 
+    **Deprecated!** 
     Boolean indicating that the most recent error was correctable. If the ErrorInfo property is equal to 3, "OK", then this property has no meaning.
 
     
@@ -65,7 +66,6 @@ Local properties
 
 ``uint8[]`` **AdditionalErrorData**
 
-    **Deprecated!** 
     An array of octets holding additional error information. An example is ECC Syndrome or the return of the check bits if a CRC-based ErrorMethodology is used. In the latter case, if a single bit error is recognized and the CRC algorithm is known, it is possible to determine the exact bit that failed. This type of data (ECC Syndrome, Check Bit or Parity Bit data, or other vendor supplied information) is included in this field. If the ErrorInfo property is equal to 3, "OK", then AdditionalErrorData has no meaning.
 
     
@@ -73,6 +73,7 @@ Local properties
 
 ``boolean`` **SystemLevelAddress**
 
+    **Deprecated!** 
     Boolean indicating whether the address information in the property, ErrorAddress, is a system-level address (TRUE) or a physical address (FALSE). If the ErrorInfo property is equal to 3, "OK", then this property has no meaning.
 
     
@@ -80,6 +81,7 @@ Local properties
 
 ``uint16`` **ErrorDataOrder**
 
+    **Deprecated!** 
     The ordering for data stored in the ErrorData property. "Least Significant Byte First" (value=1) or "Most Significant Byte First" (2) can be specified. If ErrorTransferSize is 0, then this property has no meaning.
 
     
@@ -131,6 +133,7 @@ Local properties
 
 ``uint16`` **ErrorInfo**
 
+    **Deprecated!** 
     An integer enumeration describing the type of error that occurred most recently. For example, single (value=6) or double bit errors (7) can be specified using this property. The values, 12-14, are undefined in the CIM Schema since in DMI, they mix the semantics of the type of error and whether it was correctable or not. The latter is indicated in the property, CorrectableError.
 
     
@@ -157,6 +160,7 @@ Local properties
 
 ``datetime`` **ErrorTime**
 
+    **Deprecated!** 
     The time that the last memory error occurred. The type of error is described by the ErrorInfo property. If the Error Info property is equal to 3, "OK", then this property has no meaning.
 
     

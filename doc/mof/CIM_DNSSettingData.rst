@@ -18,6 +18,20 @@ Key properties
 Local properties
 ^^^^^^^^^^^^^^^^
 
+.. _CIM-DNSSettingData-DomainName:
+
+``string`` **DomainName**
+
+    The domain to use for this client connection.
+
+    
+.. _CIM-DNSSettingData-RegisterThisConnectionsAddress:
+
+``boolean`` **RegisterThisConnectionsAddress**
+
+    Whether or not this connection's address should be registered in DNS.
+
+    
 .. _CIM-DNSSettingData-DHCPOptionsToUse:
 
 ``uint16[]`` **DHCPOptionsToUse**
@@ -35,18 +49,25 @@ Local properties
     32768..65535 Vendor Reserved   
     ============ ==================
     
-.. _CIM-DNSSettingData-DomainName:
-
-``string`` **DomainName**
-
-    The domain to use for this client connection.
-
-    
 .. _CIM-DNSSettingData-DNSServerAddresses:
 
 ``string[]`` **DNSServerAddresses**
 
     The DNS servers to contact. The array ordering correlates to the order in which the DNS servers will be contacted. The RemoteServiceAccessPoints associated with the DNSProtocolEndpoint with the value of the AccessContext property being "DNS Server" represent the actual DNS Servers being utilized by the DNS client.
+
+    
+.. _CIM-DNSSettingData-UseSuffixWhenRegistering:
+
+``boolean`` **UseSuffixWhenRegistering**
+
+    Whether or not the suffix should be appended before registering the client name with the DNS server.
+
+    
+.. _CIM-DNSSettingData-RequestedHostname:
+
+``string`` **RequestedHostname**
+
+    The Hostname requested for this client connection.
 
     
 .. _CIM-DNSSettingData-AddressOrigin:
@@ -65,27 +86,6 @@ Local properties
     32768..  Vendor Reserved
     ======== ===============
     
-.. _CIM-DNSSettingData-RegisterThisConnectionsAddress:
-
-``boolean`` **RegisterThisConnectionsAddress**
-
-    Whether or not this connection's address should be registered in DNS.
-
-    
-.. _CIM-DNSSettingData-RequestedHostname:
-
-``string`` **RequestedHostname**
-
-    The Hostname requested for this client connection.
-
-    
-.. _CIM-DNSSettingData-UseSuffixWhenRegistering:
-
-``boolean`` **UseSuffixWhenRegistering**
-
-    Whether or not the suffix should be appended before registering the client name with the DNS server.
-
-    
 
 Local methods
 ^^^^^^^^^^^^^
@@ -95,13 +95,20 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
-| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
-| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
-| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
-| ``uint16`` :ref:`ProtocolIFType <CIM-IPAssignmentSettingData-ProtocolIFType>`
+| ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressPrefixOriginDescription>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressSuffixOriginDescription>`
+| ``uint16`` :ref:`ProtocolIFType <CIM-IPAssignmentSettingData-ProtocolIFType>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPAssignmentSettingData-AddressPrefixOrigin>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPAssignmentSettingData-AddressSuffixOrigin>`
+| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
+| ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
 
 Inherited methods

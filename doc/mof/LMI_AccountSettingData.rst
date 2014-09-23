@@ -28,12 +28,15 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
 | ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
 | ``string`` :ref:`Description <CIM-ManagedElement-Description>`
 | ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
 | ``datetime`` :ref:`MaximumPasswordExpiration <CIM-AccountSettingData-MaximumPasswordExpiration>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``uint16`` :ref:`MaximumSuccessiveLoginFailures <CIM-AccountSettingData-MaximumSuccessiveLoginFailures>`
 | ``uint16[]`` :ref:`ComplexPasswordRulesEnforced <CIM-AccountSettingData-ComplexPasswordRulesEnforced>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`

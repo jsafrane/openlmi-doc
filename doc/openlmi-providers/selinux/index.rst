@@ -1,5 +1,6 @@
-OpenLMI SELinux Provider documentation
-======================================
+SELinux Provider
+================
+
 OpenLMI SELinux is a CIM provider which provides a way to read and set SELinux values,
 such as booleans, ports, or file labels.
 
@@ -15,7 +16,7 @@ Contents:
 
 .. ifconfig:: includeClasses
 
-   OpenLMI SELinux CIM Classes:
+   CIM Classes:
 
    .. toctree::
       :maxdepth: 1

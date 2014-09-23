@@ -1,5 +1,6 @@
-OpenLMI LogicalFile Provider documentation
-==========================================
+LogicalFile Provider
+====================
+
 OpenLMI LogicalFile is a CIM provider which provides a way to read information
 about files and directories. The provider also allows to traverse the file
 hierarchy, create and remove empty directories.
@@ -20,7 +21,7 @@ Contents:
 
 .. ifconfig:: includeClasses
 
-   OpenLMI LogicalFile CIM Classes:
+   CIM Classes:
 
    .. toctree::
       :maxdepth: 1

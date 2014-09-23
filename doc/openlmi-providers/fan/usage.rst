@@ -1,5 +1,6 @@
-*OpenLMI Fan* usage
-===================
+Usage
+=====
+
 Examples for common use cases listed below are written in `lmishell`_.
 
 Set up

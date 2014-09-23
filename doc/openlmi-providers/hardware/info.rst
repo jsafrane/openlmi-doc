@@ -1,7 +1,8 @@
 .. _info:
 
-OpenLMI Hardware information
-============================
+Usage
+=====
+
 OpenLMI Hardware provider contains hardware information, it does not
 implement any methods. List of provided information divided by DMTF profiles
 can be found below.

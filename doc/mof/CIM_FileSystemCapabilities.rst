@@ -49,6 +49,7 @@ Local properties
 
 ``string[]`` **SupportedOtherPersistenceTypes**
 
+    **Deprecated!** 
     An array of strings describing the persistence capabilities where the corresponding entry in SupportedPersistenceTypes has a value of "Other". This value is ignored in all other cases.
 
     

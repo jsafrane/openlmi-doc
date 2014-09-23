@@ -63,8 +63,10 @@ Inherited properties
 | ``uint16`` :ref:`ExtentStripeLength <LMI-StorageSetting-ExtentStripeLength>`
 | ``boolean`` :ref:`CompressedElement <CIM-StorageSetting-CompressedElement>`
 | ``string`` :ref:`CUImage <CIM-StorageSetting-CUImage>`
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
 | ``boolean`` :ref:`PersistentReplica <CIM-StorageSetting-PersistentReplica>`
 | ``uint16`` :ref:`InitialSynchronization <CIM-StorageSetting-InitialSynchronization>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
 | ``uint16`` :ref:`Encryption <CIM-StorageSetting-Encryption>`
 | ``uint16`` :ref:`StorageExtentInitialUsage <CIM-StorageSetting-StorageExtentInitialUsage>`
 | ``uint16`` :ref:`ExtentStripeLengthMin <LMI-StorageSetting-ExtentStripeLengthMin>`
@@ -84,6 +86,7 @@ Inherited properties
 | ``uint64`` :ref:`SpaceLimit <CIM-StorageSetting-SpaceLimit>`
 | ``uint16`` :ref:`SpaceLimitWarningThreshold <CIM-StorageSetting-SpaceLimitWarningThreshold>`
 | ``uint16`` :ref:`ExtentStripeLengthMax <LMI-StorageSetting-ExtentStripeLengthMax>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``uint16`` :ref:`PackageRedundancyGoal <LMI-StorageSetting-PackageRedundancyGoal>`
 | ``uint8`` :ref:`DeltaReservationMax <CIM-StorageSetting-DeltaReservationMax>`
 | ``uint16`` :ref:`DataRedundancyMax <LMI-StorageSetting-DataRedundancyMax>`

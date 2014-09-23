@@ -305,13 +305,14 @@ Local properties
     105      Microsoft Windows 7                  
     106      CentOS 32-bit                        
     107      CentOS 64-bit                        
-    108      Oracle Enterprise Linux 32-bit       
-    109      Oracle Enterprise Linux 64-bit       
+    108      Oracle Linux 32-bit                  
+    109      Oracle Linux 64-bit                  
     110      eComStation 32-bitx                  
     111      Microsoft Windows Server 2011        
     113      Microsoft Windows Server 2012        
     114      Microsoft Windows 8                  
     115      Microsoft Windows 8 64-bit           
+    116      Microsoft Windows Server 2012 R2     
     ======== =====================================
     
 .. _LMI-SoftwareIdentityFileCheck-Name:

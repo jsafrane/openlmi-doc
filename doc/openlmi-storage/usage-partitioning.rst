@@ -30,6 +30,7 @@ and:
   * 2 logical partitions
 
 .. figure:: pic/partition-instance.svg
+   :target: ../_images/partition-instance.svg
 
 Especially note that the extended partition ``/dev/sda4`` *contains* an extended
 partition table and all logical partitions are based on this extended
@@ -81,10 +82,16 @@ later. Enumerate instances of
 class to get list of all of them, together with their basic properties like
 partition table size and maximum number of partitions::
 
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+
     part_styles = ns.LMI_DiskPartitionConfigurationCapabilities.instances()
     for style in part_styles:
         print style.Caption
         print "Partition table size:", style.PartitionTableSize, "block(s)"
+
+.. _example-create-partition-table:
 
 Create partition table
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -95,11 +102,18 @@ method.
 
 Sample code to create GPT partition table on ``/dev/sda``::
 
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    partitioning_service = ns.LMI_DiskPartitionConfigurationService.first_instance()
+
     # Find the disk
     sda = ns.LMI_StorageExtent.first_instance({"Name": "/dev/sda"})
+
     # Find the partition table style we want to create there
     gpt_caps = ns.LMI_DiskPartitionConfigurationCapabilities.first_instance(
             {"InstanceID": "LMI:LMI_DiskPartitionConfigurationCapabilities:GPT"})
+
     # Create the partition table
     partitioning_service.SetPartitionStyle(
             Extent=sda,
@@ -109,6 +123,8 @@ MS-DOS partition tables are created with the same code, just using different
 :ref:`LMI_DiskPartitionConfigurationCapabilities <LMI-DiskPartitionConfigurationCapabilities>`
 instance.
 
+.. _example-create-partition:
+
 Create partition
 ^^^^^^^^^^^^^^^^
 
@@ -117,7 +133,13 @@ Use
 method.
 
 Following code creates several partitions on ``/dev/sda``. The code is the same
-for GPT and MS-DOS partitions:: 
+for GPT and MS-DOS partitions::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    partitioning_service = ns.LMI_DiskPartitionConfigurationService.first_instance()
+    MEGABYTE = 1024*1024
 
     # Define helper function
     def print_partition(partition_name):
@@ -169,6 +191,11 @@ disk.
 Following code lists all partitions on ``/dev/sda``, together with their
 location::
 
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    partitioning_service = ns.LMI_DiskPartitionConfigurationService.first_instance()
+
     # Find the disk
     sda = ns.LMI_StorageExtent.first_instance({"Name": "/dev/sda"})
 
@@ -184,6 +211,11 @@ Find the largest continuous unpartitioned space on a disk
 Using side-effect of
 :ref:`FindPartitionLocation <LMI-DiskPartitionConfigurationCapabilities-FindPartitionLocation>`,
 we can find size of the largest partition that can be created on ``/dev/sda``::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    partitioning_service = ns.LMI_DiskPartitionConfigurationService.first_instance()
 
     # Find the disk
     sda = ns.LMI_StorageExtent.first_instance({"Name": "/dev/sda"})
@@ -203,6 +235,11 @@ Delete partition
 
 Call
 :ref:`LMI_DeletePartition <LMI-DiskPartitionConfigurationService-LMI-DeletePartition>`::
+
+    # Connect to the remote system and prepare some local variables
+    connection = connect("remote.host.org", "root", "opensesame")
+    ns = connection.root.cimv2  # ns as NameSpace
+    partitioning_service = ns.LMI_DiskPartitionConfigurationService.first_instance()
 
     sda1 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sda1"})
     (ret, outparams, err) = partitioning_service.LMI_DeletePartition(

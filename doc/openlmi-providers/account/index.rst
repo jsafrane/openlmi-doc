@@ -1,10 +1,6 @@
-.. OpenLMI Account documentation master file, created by
-   sphinx-quickstart on Wed Aug 21 16:15:23 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Account Provider
+================
 
-OpenLMI Account Provider documentation
-===========================================
 OpenLMI Account is CIM provider which manages POSIX accounts.
 It allows to create, delete and modify users and groups.
 
@@ -21,7 +17,7 @@ Contents:
 
 .. ifconfig:: includeClasses
 
-   OpenLMI Account CIM Classes:
+   CIM Classes:
 
    .. toctree::
       :maxdepth: 1

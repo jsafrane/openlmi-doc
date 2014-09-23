@@ -1,5 +1,5 @@
-OpenLMI Locale usage
-====================
+Usage
+=====
 
 Some common use cases are described in the following parts.
 

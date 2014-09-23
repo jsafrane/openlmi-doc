@@ -2,6 +2,7 @@
 
 Introduction
 ============
+
 *OpenLMI Power Management Provider* allows to manage power states of
 the managed system. Key functionality is ability to reboot, power off, suspend
 and hibernate managed system.

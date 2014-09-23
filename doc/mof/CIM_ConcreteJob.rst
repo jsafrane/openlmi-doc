@@ -37,13 +37,66 @@ Local properties
 
 ``string`` **JobOutParameters**
 
-    The output, (including inout), parameters of the Job, formatted as an EmbeddedObject (with a predefined class name of "__JobOutParameters". 
+    The output (including inout), parameters of the job, formatted as an embedded instance with a class name of "__JobOutParameters".
 
-    This property shall be NULL unless JobStatus has the value Completed.
+    
 
-    In the case where a Job represents an intrinsic operation or an extrinsic method call, this property contains the parameters and return value of that call.Each parameter is mapped to a corresponding property of the same type. The returnvalue is mapped to a property with the name __ReturnValue of the same type.
+    This property shall be NULL unless JobStatus has the value Completed (7).
 
-    The value of each embedded property shall be the value of the corresponding output pararmeter or ReturnValue at the time the job completed.
+    
+
+    In the case where a job represents an intrinsic operation or an extrinsic method call, that embedded instance contains properties representing the output parameters and return value of that call. Each output parameter is mapped to a corresponding property of the same name and type, and the return value is mapped to a property with the name __ReturnValue of the same type. REF-typed parameters and return values are mapped to Reference-qualified properties of type string whose value is the instance path in WBEM URI format.
+
+    
+
+    The value of each such property shall be the value of the corresponding output parameter or return value at the time the job completed.
+
+    
+.. _CIM-ConcreteJob-MethodName:
+
+``string`` **MethodName**
+
+    If not NULL, the name of the intrinsic operation or extrinsic method for which this Job represents an invocation.
+
+    When not NULL, and if an extrinsic method, the format shall be <classPath>.MethodName, where classPath is a WBEM-URI-TypedClassPath or a WBEM-URI-UntypedClassPath as defined by DSP0207. And where methodName is a method of that class.
+
+    When not NULL, and if an intrinsic operation, the format shall be <namespacePath>.OperationName, where namespacePath is a WBEM-URI-TypedNamespacePath or a WBEM-URI-UntypedNamespacePath as defined by DSP0207. And where OperationName is either the name of a generic operation as defined in DSP0223 or is the name of a protocol specific operation as defined for the protocol used to retrieve the instance.
+
+    
+.. _CIM-ConcreteJob-TimeOfLastStateChange:
+
+``datetime`` **TimeOfLastStateChange**
+
+    The date or time when the state of the Job last changed. If the state of the Job has not changed and this property is populated, then it must be set to a 0 interval value. If a state change was requested, but rejected or not yet processed, the property must not be updated.
+
+    
+.. _CIM-ConcreteJob-TimeBeforeRemoval:
+
+``datetime`` **TimeBeforeRemoval**
+
+    The amount of time that the Job is retained after it has finished executing, either succeeding or failing in that execution. The job must remain in existence for some period of time regardless of the value of the DeleteOnCompletion property. 
+
+    The default is five minutes.
+
+    
+.. _CIM-ConcreteJob-Name:
+
+``string`` **Name**
+
+    The user-friendly name for this instance of a Job. In addition, the user-friendly name can be used as a property for a search or query. (Note: Name does not have to be unique within a namespace.)
+
+    
+.. _CIM-ConcreteJob-DeleteOnCompletion:
+
+``boolean`` **DeleteOnCompletion**
+
+    Indicates whether or not the job should be automatically deleted upon completion. Note that the 'completion' of a job includes when the Job is terminated by manual intervention. 
+
+    If this property is set to false and the job completes, then the intrinsic method DeleteInstance must be used to delete the job instead of updating this property.
+
+    If this property is set to true and the job completes, then the job may be deleted after the TimeBeforeRemoval interval.
+
+    If there is a CIM_DiagnosticServiceJobCapabilities associated to the service that spawned the job, then the DeleteOnCompletion should be TRUE if CIM_DiagnosticServiceJobCapabilities.DeleteJobSupported is FALSE. If DeleteOnCompletion is FALSE, then CIM_DiagnosticServiceJobCapabilities.CleanupInterval should be non-NULL.
 
     
 .. _CIM-ConcreteJob-JobState:
@@ -93,47 +146,15 @@ Local properties
     32768..65535 Vendor Reserved
     ============ ===============
     
-.. _CIM-ConcreteJob-TimeOfLastStateChange:
-
-``datetime`` **TimeOfLastStateChange**
-
-    The date or time when the state of the Job last changed. If the state of the Job has not changed and this property is populated, then it must be set to a 0 interval value. If a state change was requested, but rejected or not yet processed, the property must not be updated.
-
-    
-.. _CIM-ConcreteJob-Name:
-
-``string`` **Name**
-
-    The user-friendly name for this instance of a Job. In addition, the user-friendly name can be used as a property for a search or query. (Note: Name does not have to be unique within a namespace.)
-
-    
-.. _CIM-ConcreteJob-MethodName:
-
-``string`` **MethodName**
-
-    If not NULL, the name of the intrinsic operation or extrinsic method for which this Job represents an invocation.
-
-    When not NULL, and if an extrinsic method, the format shall be <classPath>.MethodName, where classPath is a WBEM-URI-TypedClassPath or a WBEM-URI-UntypedClassPath as defined by DSP0207. And where methodName is a method of that class.
-
-    When not NULL, and if an intrinsic operation, the format shall be <namespacePath>.OperationName, where namespacePath is a WBEM-URI-TypedNamespacePath or a WBEM-URI-UntypedNamespacePath as defined by DSP0207. And where OperationName is either the name of a generic operation as defined in DSP0223 or is the name of a protocol specific operation as defined for the protocol used to retrieve the instance.
-
-    
 .. _CIM-ConcreteJob-JobInParameters:
 
 ``string`` **JobInParameters**
 
-    The input, (including inout), parameters of the Job, formatted as an EmbeddedObject (with a predefined class name of "__JobInParameters". In the case where a Job represents an intrinsic operation or an extrinsic method call, this property contains the input parameters of that call.Each input parameter is mapped to a corresponding property of the same type.
+    The input (including inout), parameters of the job, formatted as an embedded instance with a class name of "__JobInParameters".
 
-    The value of each embedded property shall be the value of the corresponding input pararmeter at the time the job was started.
+    In the case where a job represents an intrinsic operation or an extrinsic method call, that embedded instance contains properties representing the input parameters of that call. Each input parameter is mapped to a corresponding property of the same name and type. REF-typed parameters are represented as Reference-qualified properties of type string whose value is the instance path in WBEM URI format.
 
-    
-.. _CIM-ConcreteJob-TimeBeforeRemoval:
-
-``datetime`` **TimeBeforeRemoval**
-
-    The amount of time that the Job is retained after it has finished executing, either succeeding or failing in that execution. The job must remain in existence for some period of time regardless of the value of the DeleteOnCompletion property. 
-
-    The default is five minutes.
+    The value of each property shall be the value of the corresponding input parameter at the time the job was started.
 
     
 
@@ -205,6 +226,97 @@ Local methods
             
         
     
+    .. _CIM-ConcreteJob-ResumeWithAction:
+
+``uint32`` **ResumeWithAction** ()
+
+    The CIM_ConcreteJob.ResumeWithAction( ) method is invoked to resume the execution of a job when it has a JobState of 12 (Query Pending) and an action (rather than input) was requested. The pending query is a request to perform an action and the job program merely needs to know when the action is completed.
+
+    The job would request the action(s) through one or more indications. When an indication has been sent, but there has not been a client response the job will have a JobState of Query Pending.
+
+    
+    ============ =============================
+    ValueMap     Values                       
+    ============ =============================
+    0            Completed with No Error      
+    2            Unknown/Unspecified Error    
+    3            The job has already timed out
+    4            Failed                       
+    6            JobState not Query Pending   
+    ..           DMTF Reserved                
+    32768..65535 Vendor specific              
+    ============ =============================
+    
+    **Parameters**
+    
+*None*
+    .. _CIM-ConcreteJob-GetError:
+
+``uint32`` **GetError** (``string`` Error)
+
+    GetError is deprecated because Error should be an array,not a scalar.
+
+    When the job is executing or has terminated without error, then this method returns no CIM_Error instance. However, if the job has failed because of some internal problem or because the job has been terminated by a client, then a CIM_Error instance is returned.
+
+    
+    ============ =================
+    ValueMap     Values           
+    ============ =================
+    0            Success          
+    1            Not Supported    
+    2            Unspecified Error
+    3            Timeout          
+    4            Failed           
+    5            Invalid Parameter
+    6            Access Denied    
+    ..           DMTF Reserved    
+    32768..65535 Vendor Specific  
+    ============ =================
+    
+    **Parameters**
+    
+        *OUT* ``string`` **Error**
+            If the OperationalStatus on the Job is not "OK", then this method will return a CIM Error instance. Otherwise, when the Job is "OK", null is returned.
+
+            
+        
+    
+    .. _CIM-ConcreteJob-ResumeWithInput:
+
+``uint32`` **ResumeWithInput** (``string[]`` Inputs)
+
+    The CIM_ConcreteJob.ResumeWithInput( ) method is invoked to resume the execution of the job when it has a JobState of 12 (Query Pending). The input parameters specify an array of strings that constitute the client supplied inputs to the job program. 
+
+    The job would request the inputs through one or more indications. When an indication has been sent, but there has not been a client response the job will have a JobState of Query Pending.
+
+    
+    ============ =============================
+    ValueMap     Values                       
+    ============ =============================
+    0            Completed with No Error      
+    2            Unknown/Unspecified Error    
+    3            The job has already timed out
+    4            Failed                       
+    5            Invalid Parameter            
+    6            JobState not Query Pending   
+    ..           DMTF Reserved                
+    32768..65535 Vendor specific              
+    ============ =============================
+    
+    **Parameters**
+    
+        *IN* ``string[]`` **Inputs**
+            The input values requested of the client by the job when its state changed to 12 (Query Pending).
+
+            If the CIM_ConcreteJob is associated with a CIM_DiagnosticTest, then the CIM_DiagnosticTest.Characteristics property shall contain 3 (Is Interactive).
+
+            If the CIM_ConcreteJob is associated with a CIM_DiagnosticTest and a corresponding CIM_DiagnosticServiceJobCapabilities exists, then CIM_DiagnosticServiceJobCapabilities.ClientRetriesMax identifies the number of times this method may be retried and CIM_DiagnosticServiceJobCapabilities.DefaultValuesSupported identifies the whether or not default input values are supported.
+
+            If the CIM_ConcreteJob instance is executing under the control of a CIM_JobSettingData, then CIM_JobSettingData.DefaultInputValues shall identify the Default input values to be used if default input values are supported, CIM_JobSettingData.InteractiveTimeout identifies the amount of time to wait for a client to issue the ResumeWithInput and CIM_JobSettingData.ClientRetries identifies the number of retries of the method that the client may execute.
+
+            
+        
+    
     .. _CIM-ConcreteJob-GetErrors:
 
 ``uint32`` **GetErrors** (``string[]`` Errors)
@@ -238,37 +350,6 @@ Local methods
             
         
     
-    .. _CIM-ConcreteJob-GetError:
-
-``uint32`` **GetError** (``string`` Error)
-
-    GetError is deprecated because Error should be an array,not a scalar.
-
-    When the job is executing or has terminated without error, then this method returns no CIM_Error instance. However, if the job has failed because of some internal problem or because the job has been terminated by a client, then a CIM_Error instance is returned.
-
-    
-    ============ =================
-    ValueMap     Values           
-    ============ =================
-    0            Success          
-    1            Not Supported    
-    2            Unspecified Error
-    3            Timeout          
-    4            Failed           
-    5            Invalid Parameter
-    6            Access Denied    
-    ..           DMTF Reserved    
-    32768..65535 Vendor Specific  
-    ============ =================
-    
-    **Parameters**
-    
-        *OUT* ``string`` **Error**
-            If the OperationalStatus on the Job is not "OK", then this method will return a CIM Error instance. Otherwise, when the Job is "OK", null is returned.
-
-            
-        
-    
 
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
@@ -292,10 +373,9 @@ Inherited properties
 | ``datetime`` :ref:`InstallDate <CIM-ManagedSystemElement-InstallDate>`
 | ``sint8`` :ref:`RunDayOfWeek <CIM-Job-RunDayOfWeek>`
 | ``string`` :ref:`ElementName <CIM-ManagedElement-ElementName>`
-| ``string`` :ref:`JobStatus <CIM-Job-JobStatus>`
 | ``datetime`` :ref:`ElapsedTime <CIM-Job-ElapsedTime>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
-| ``boolean`` :ref:`DeleteOnCompletion <CIM-Job-DeleteOnCompletion>`
+| ``string`` :ref:`JobStatus <CIM-Job-JobStatus>`
 | ``datetime`` :ref:`TimeSubmitted <CIM-Job-TimeSubmitted>`
 | ``uint16`` :ref:`PrimaryStatus <CIM-ManagedSystemElement-PrimaryStatus>`
 | ``string`` :ref:`ErrorDescription <CIM-Job-ErrorDescription>`

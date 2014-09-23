@@ -1,5 +1,5 @@
-OpenLMI Power Management Provider Documentation
-===============================================
+Power Management
+================
 
 Contents:
 
@@ -7,12 +7,11 @@ Contents:
     :maxdepth: 2
 
     introduction
-    concepts
     usage
 
 .. ifconfig:: includeClasses
 
-   OpenLMI Power Management CIM classes:
+   CIM classes:
 
    .. toctree::
       :maxdepth: 1

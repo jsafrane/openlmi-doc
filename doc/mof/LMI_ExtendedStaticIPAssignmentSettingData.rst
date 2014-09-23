@@ -82,13 +82,20 @@ Local methods
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^
 
+| ``string`` :ref:`SoOrgID <CIM-SettingData-SoOrgID>`
 | ``string`` :ref:`ElementName <CIM-SettingData-ElementName>`
-| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
+| ``string`` :ref:`OtherAddressSuffixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressSuffixOriginDescription>`
+| ``string`` :ref:`OtherAddressPrefixOriginDescription <CIM-IPAssignmentSettingData-OtherAddressPrefixOriginDescription>`
 | ``uint16`` :ref:`ChangeableType <CIM-SettingData-ChangeableType>`
 | ``string`` :ref:`InstanceID <CIM-SettingData-InstanceID>`
-| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
+| ``string[]`` :ref:`ComponentSetting <CIM-SettingData-ComponentSetting>`
 | ``string`` :ref:`Caption <CIM-ManagedElement-Caption>`
+| ``uint16`` :ref:`AddressPrefixOrigin <CIM-IPAssignmentSettingData-AddressPrefixOrigin>`
 | ``string`` :ref:`ConfigurationName <CIM-SettingData-ConfigurationName>`
+| ``string`` :ref:`SoID <CIM-SettingData-SoID>`
+| ``uint64`` :ref:`Generation <CIM-ManagedElement-Generation>`
+| ``uint16`` :ref:`AddressSuffixOrigin <CIM-IPAssignmentSettingData-AddressSuffixOrigin>`
+| ``string`` :ref:`Description <CIM-ManagedElement-Description>`
 
 Inherited methods
 ^^^^^^^^^^^^^^^^^
