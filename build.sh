@@ -45,12 +45,6 @@ popd
 # openlmi-networking
 #######################################################
 
-# Generate pictures
-#pushd _build/networking
-#cmake ../../_ext/openlmi-networking
-#make doc-pic
-#popd
-
 # Copy docs to the right place
 cp -v _ext/openlmi-networking/doc/admin/*.rst doc/openlmi-networking
 mkdir -p doc/openlmi-networking/pic
@@ -101,7 +95,16 @@ touch doc/python/lmi/__init__.py doc/python/lmi/scripts/__init__.py
 # pywbem
 #######################################################
 # We need pywbem to be available in git, it's not on readthedocs.org
-pip -v install -I -t  doc/python/ --allow-external pywbem   pywbem
+# Ignore error when the package is already installed
+pip -v install -I -t  doc/python/ --allow-external pywbem   pywbem || :
+
+
+#######################################################
+# Update image hyperlinks
+#######################################################
+# Every provider is in its own subdirectory. We need to
+# update all links to images to add '../'
+find doc/ -name "*.rst" -exec sed -i -e 's!\(\:target\:.*\)_images!\1../_images!' {} \;
 
 #######################################################
 # Generate it
@@ -109,7 +112,7 @@ pip -v install -I -t  doc/python/ --allow-external pywbem   pywbem
 
 # generate class reference
 pushd doc/mof
-make
+PATH=../../_ext/openlmi-providers/tools:$PATH make
 popd
 
 pushd doc
