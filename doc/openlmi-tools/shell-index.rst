@@ -3,7 +3,7 @@
 .. include:: shell-heading.txt
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     shell/startup
     shell/namespaces
@@ -16,4 +16,3 @@
     shell/return_values
     shell/interactive_interface
     shell/builtins
-    shell/code

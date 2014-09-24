@@ -75,7 +75,7 @@ rm -v _build/mof/*MethodParameters*
 #######################################################
 # openlmi-tools
 #######################################################
-ln -sf $PWD/_ext/openlmi-scripts doc/openlmi-scripts
+ln -sf $PWD/_ext/openlmi-scripts _ext/openlmi-tools/doc/
 
 pushd _ext/openlmi-tools/doc/src
 OPENLMI_SCRIPTS_DIR=$PWD/../openlmi-scripts WITH_COMMANDS=1 make deps-rtd index-rtd

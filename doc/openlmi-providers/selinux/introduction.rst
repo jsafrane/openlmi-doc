@@ -5,8 +5,9 @@ SELinux provider model is displayed in the following figure. Classes with the
 blue mark are part of the provider.
 
 .. figure:: pic/selinux.svg
+   :target: ../_images/selinux.svg
 
-  SELinux provider model
+   SELinux provider model
 
 Basic SELinux entities are represented by :ref:`LMI_SELinuxElement
 <LMI-SELinuxElement>`. It is a basic class from which concrete SELinux items are

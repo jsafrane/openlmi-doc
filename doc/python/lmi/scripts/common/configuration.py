@@ -14,13 +14,6 @@
 # along with this program; if not, see <http://www.gnu.org/licenses/>.
 """
 Module for Configuration class.
-
-Configuration
----------------------
-
-.. autoclass:: Configuration
-    :members:
-
 """
 
 import os

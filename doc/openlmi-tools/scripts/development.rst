@@ -7,4 +7,3 @@
     devel/basics
     devel/command-classes
     devel/command-properties
-    devel/api

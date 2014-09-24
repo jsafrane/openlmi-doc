@@ -16,7 +16,7 @@ corresponding classes.
 
 .. figure:: pic/software-profile.svg
     :alt: OpenLMI Software class model
-    :width: 800px
+    :target: ../_images/software-profile.svg
 
     This model shows classes representing various objects taking role in
     software management provided by *OpenLMI Software* provider.

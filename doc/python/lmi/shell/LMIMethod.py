@@ -54,46 +54,82 @@ from lmi.shell.LMIExceptions import *
 logger = logging.getLogger(__name__)
 
 
-class LMISignalHelper(object):
+class LMISignalHelperBase(object):
     """
-    Helper class, which takes care of signal (de)registration and handling.
+    Base signal handling class.
     """
 
-    _instance = None
-
-    def __new__(cls):
-        if cls._instance is None:
-            cls._instance = super(LMISignalHelper, cls).__new__(cls)
-            LMISignalHelper.reset(cls._instance)
-        return cls._instance
-
-    def reset(self):
+    @staticmethod
+    def signal(signo, handler):
         """
-        Resets the single instance into default state.
+        Calls signal() for signo, handler and returns the old signal handler.
+        If signo is list of signals, the signal() call is applied for each
+        signo. If handler is also list, each signal from signo will be handled
+        by corresponding handler. In such case, tuple of previous handlers will
+        be returned.
         """
-        self._handler_sigint = None
-        self._handler_sigterm = None
+        if isinstance(signo, (list, tuple)):
+            if not isinstance(handler, (list, tuple)):
+                handler = [handler] * len(signo)
+            signo_handler = zip(signo, handler)
+            if not signo_handler:
+                return (None,) * len(signo)
+            old_handlers = []
+            for signal, handler in signo_handler:
+                old_handlers.append(
+                    LMISignalHelperBase.signal_core(signal, handler))
+            return tuple(old_handlers)
+        else:
+            return LMISignalHelperBase.signal_core(signal, handler)
+
+    @staticmethod
+    def signal_core(signo, handler):
+        """
+        Wrapper method for signal.signal(). In case of ValueError, it returns
+        None, old signal handler otherwise. If handler is None, default signal
+        handler is set for such signal.
+        """
+        try:
+            if handler is None:
+                handler = signal.SIG_DFL
+            return signal.signal(signo, handler)
+        except ValueError:
+            return None
+
+
+class LMIMethodSignalHelper(LMISignalHelperBase):
+    """
+    Helper class which takes care of signal (de)registration and handling.
+    """
+
+    INTERRUPT_SIGNALS = (
+        signal.SIGINT,
+        signal.SIGTERM)
+
+    def __init__(self):
+        super(LMIMethodSignalHelper, self).__init__()
         self._signal_handled = False
-        self._instance._callbacks = collections.OrderedDict()
+        self._signal_prev_handlers = (signal.SIG_DFL,) * 2
+        self._callbacks = collections.OrderedDict()
 
     def signal_attach(self):
         """
         Registers *SIGINT* and *SIGTERM* signals to local handler in which, the
         flags for each signal are modified, if such signal is caught.
         """
+        def handler(sig, action):
+            self.signal_handler(sig, action)
+
         self._signal_handled = False
-        self._handler_sigint = signal.signal(
-            signal.SIGINT,  LMISignalHelper.__signal_handler)
-        self._handler_sigterm = signal.signal(
-            signal.SIGTERM, LMISignalHelper.__signal_handler)
+        self._signal_prev_handlers = self.signal(
+            self.INTERRUPT_SIGNALS, handler)
 
     def signal_detach(self):
         """
         Unregisters *SIGINT* and *SIGTERM* handler and removes all the attached
         callbacks.
         """
-        signal.signal(signal.SIGINT,  self._handler_sigint)
-        signal.signal(signal.SIGTERM, self._handler_sigterm)
+        self.signal(self.INTERRUPT_SIGNALS, self._signal_prev_handlers)
 
     def signal_handled(self):
         """
@@ -120,21 +156,17 @@ class LMISignalHelper(object):
         """
         self._callbacks.pop(cb_name)
 
-    @staticmethod
-    def __signal_handler(signo, frame):
+    def signal_handler(self, signo, frame):
         """
         Signal handler, which is called, when *SIGINT* and *SIGTERM* are sent
         to the LMIShell.
 
         :param int signo: signal number
         :param frame: -- stack frame
-
-        **NOTE:** see help(signal)
         """
-        if signo in (signal.SIGINT, signal.SIGTERM):
-            LMISignalHelper._instance._signal_handled = True
-        for cb in LMISignalHelper._instance._callbacks.values():
-            cb()
+        if signo in self.INTERRUPT_SIGNALS:
+            self._signal_handled = True
+        [cb() for cb in self._callbacks.values()]
 
 
 class LMIMethod(LMIWrapperBaseObject):
@@ -433,14 +465,15 @@ class LMIMethod(LMIWrapperBaseObject):
 
         # Register signal callback for SIGINT, SIGTERM with callback,
         # which awakes waiting thread for immediate return.
-        LMISignalHelper().callback_attach(
+        signal_helper = LMIMethodSignalHelper()
+        signal_helper.callback_attach(
             "indication", lambda: LMIMethod.__wake(cond))
-        LMISignalHelper().signal_attach()
+        signal_helper.signal_attach()
 
         # Wait for the job to finish
         wake_cnt = 0
         cond.acquire()
-        while not LMISignalHelper().signal_handled() and \
+        while not signal_helper.signal_handled() and \
                 not job_finished.value and \
                 not lmi_is_job_finished(job_inst):
             cond.wait(LMIMethod._COND_WAIT_TIME)
@@ -469,8 +502,8 @@ class LMIMethod(LMIWrapperBaseObject):
                     break
 
         # Unregister signal handler
-        LMISignalHelper().signal_detach()
-        LMISignalHelper().callback_detach("indication")
+        signal_helper.signal_detach()
+        signal_helper.callback_detach("indication")
 
         cond.release()
 
@@ -480,7 +513,7 @@ class LMIMethod(LMIWrapperBaseObject):
         self._conn.client.delete_instance(cim_handler.path)
         if job_exception.value:
             raise job_exception.value
-        if LMISignalHelper().signal_handled() and not job_finished.value:
+        if signal_helper.signal_handled() and not job_finished.value:
             # We got SIGINT or SIGTERM, when waiting for the job, cancelling
             # the job
             logger.warn("Cancelling a job '%s'" % job_inst.Name)
@@ -506,9 +539,10 @@ class LMIMethod(LMIWrapperBaseObject):
 
         # Register signal callback for SIGINT, SIGTERM with callback,
         # which awakes waiting thread for immediate return.
-        LMISignalHelper().callback_attach(
+        signal_helper = LMIMethodSignalHelper()
+        signal_helper.callback_attach(
             "polling", lambda: LMIMethod.__wake(cond))
-        LMISignalHelper().signal_attach()
+        signal_helper.signal_attach()
 
         cond = threading.Condition()
         cond.acquire()
@@ -517,7 +551,7 @@ class LMIMethod(LMIWrapperBaseObject):
 
         try:
             sleep_time = 1
-            while not LMISignalHelper().signal_handled() and \
+            while not signal_helper.signal_handled() and \
                     not lmi_is_job_finished(job_inst):
                 # Sleep, a bit longer in every iteration
                 cond.wait(sleep_time)
@@ -539,10 +573,10 @@ class LMIMethod(LMIWrapperBaseObject):
             cond.release()
 
         # Unregister signal handler and callback
-        LMISignalHelper().signal_detach()
-        LMISignalHelper().callback_detach("polling")
+        signal_helper.signal_detach()
+        signal_helper.callback_detach("polling")
 
-        if LMISignalHelper().signal_handled() and \
+        if signal_helper.signal_handled() and \
                 not lmi_is_job_finished(job_inst):
             # We got SIGINT or SIGTERM, when waiting for the job, cancelling
             # the job

@@ -8,6 +8,7 @@ must have been acquired.
 
   c = connect("https://myhost", "user", "secret")
   service = c.root.cimv2.LMI_SELinuxService.first_instance()
+  system = c.root.cimv2.PG_ComputerSystem.first_instance()
 
 As a convenience helper function for further use, `lmi_unixfile_instance_name`
 is defined. It provides an easy way to get file references for methods that
@@ -16,11 +17,11 @@ require an LMI_UnixFile reference as a parameter.
 ::
 
   def lmi_unixfile_instance_name(path):
-      props = {"CSName":"myhost",
-               "CSCreationClassName":"PG_ComputerSystem",
-               "FSCreationClassName":"",
-               "FSName":"",
-               "LFCreationClassName":"",
+      props = {"CSName":system.name,
+               "CSCreationClassName":system.classname,
+               "FSCreationClassName":"ignored",
+               "FSName":"ignored",
+               "LFCreationClassName":"ignored",
                "LFName":path}
       return c.root.cimv2.LMI_UnixFile.new_instance_name(props)
 
@@ -58,9 +59,9 @@ List all booleans and print their current and default values::
 To enable the `httpd_use_sasl` boolean in the current runtime, but not permanently::
 
   target = c.root.cimv2.LMI_SELinuxBoolean.new_instance_name({"InstanceID":"LMI:LMI_SELinuxBoolean:httpd_use_sasl"})
-  service = inst.SetBoolean({"Target":target,
-                             "Value":True,
-                             "MakeDefault":False})
+  res = service.SetBoolean({"Target":target,
+                            "Value":True,
+                            "MakeDefault":False})
 
 Ports
 -----
@@ -87,7 +88,8 @@ To see what SELinux context a file holds, the `LogicalFile <http://www.openlmi.o
 
   target = lmi_unixfile_instance_name("/tmp/file")
   file = target.to_instance()
-  print file.Name
+  print file.SELinuxCurrentContext
+  print file.SELinuxExpectedContext
 
 Set a file context::
 

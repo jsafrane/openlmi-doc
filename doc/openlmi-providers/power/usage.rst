@@ -5,8 +5,9 @@ Usage
 =====
 
 .. figure:: pic/powermanagement.svg
+   :target: ../_images/powermanagement.svg
 
-    Class diagram for Power Management provider.
+   Class diagram for Power Management provider.
 
 Base class of this provider is
 :ref:`LMI_PowerManagementService <LMI-PowerManagementService>`.

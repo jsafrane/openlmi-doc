@@ -22,12 +22,15 @@ import socket
 import string
 import threading
 
+from xml.sax.saxutils import escape
+
 from SocketServer import BaseRequestHandler
 from SocketServer import ThreadingMixIn
 from BaseHTTPServer import HTTPServer
 from BaseHTTPServer import BaseHTTPRequestHandler
 
 from lmi.shell.LMIExceptions import ConnectionError
+from lmi.shell.compat import http
 
 
 class CIMIndicationHandlerCallback(object):
@@ -54,6 +57,43 @@ class CIMIndicationHandler(ThreadingMixIn, BaseHTTPRequestHandler):
     indication.
     """
     CIMLISTENER_PREFIX = "/CIMListener"
+
+    @staticmethod
+    def make_indication_response(cim_version, dtd_version, message_id,
+                                protocol_version):
+        """
+        Returns CIM-XML indication response with CIM, DTD, Protocol version
+        and Message ID filled.
+        """
+        return "<?xml version=\"1.0\" encoding=\"utf-8\" ?>\n" \
+            "<CIM CIMVERSION=\"%s\" DTDVERSION=\"%s\">\n" \
+            "<MESSAGE ID=\"%s\" PROTOCOLVERSION=\"%s\">\n" \
+            "<SIMPLEEXPRSP>\n" \
+            "<EXPMETHODRESPONSE NAME=\"ExportIndication\">\n" \
+            "</EXPMETHODRESPONSE>\n" \
+            "</SIMPLEEXPRSP>\n" \
+            "</MESSAGE>\n" \
+            "</CIM>\n" % tuple(escape(arg) for arg in (
+                cim_version, dtd_version, message_id, protocol_version))
+
+    def send_indication_response(self, response):
+        """
+        Sends indication response.
+        """
+        http_version = self.request_version
+        http_response = http.HTTPResponse(200, http_version, wfile=self.wfile)
+        http_response[http.HEADER_NAME_CONTENT_TYPE] = http.HEADER_VALUE_CONTENT_TYPE
+        if http_version == http.HTTP_1_1:
+            http_response[http.HEADER_NAME_TRANSFER_ENCODING] = http.HEADER_VALUE_CHUNKED
+        else:
+            http_response[http.HEADER_NAME_CONTENT_LENGTH] = len(response)
+        http_response[http.HEADER_NAME_CIM_EXPORT] = http.HEADER_VALUE_CIM_EXPORT_METHOD_RESPONSE
+        http_response[http.HEADER_NAME_TRAILER] = ", ".join([
+            http.HEADER_VALUE_CIM_STATUS_CODE,
+            http.HEADER_VALUE_CIM_STATUS_CODE_DESCRIPTION,
+            http.HEADER_VALUE_CONTENT_LANGUAGE])
+        http_response.body = response
+        http_response.send()
 
     def do_POST(self):
         """
@@ -100,6 +140,15 @@ class CIMIndicationHandler(ThreadingMixIn, BaseHTTPRequestHandler):
             ind_dict = export_methods.values()[0]
             if "NewIndication" in ind_dict:
                 ind = ind_dict["NewIndication"]
+
+        # Inform the CIMOM, that we got the indication.
+        cim_version = tt[1]["CIMVERSION"]
+        dtd_version = tt[1]["DTDVERSION"]
+        message_id = message[1]["ID"]
+        protocol_version = message[1]["PROTOCOLVERSION"]
+        self.send_indication_response(
+            self.make_indication_response(
+                cim_version, dtd_version, message_id, protocol_version))
 
         path = self.path
         cimlistener_ind = path.find(self.CIMLISTENER_PREFIX)

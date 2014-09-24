@@ -1,11 +1,13 @@
-    * `openlmi-scripts-account <http://pythonhosted.org/openlmi-scripts-account>`_
-    * `openlmi-scripts-hardware <http://pythonhosted.org/openlmi-scripts-hardware>`_
-    * `openlmi-scripts-journald <http://pythonhosted.org/openlmi-scripts-journald>`_
-    * `openlmi-scripts-logicalfile <http://pythonhosted.org/openlmi-scripts-logicalfile>`_
-    * `openlmi-scripts-networking <http://pythonhosted.org/openlmi-scripts-networking>`_
-    * `openlmi-scripts-powermanagement <http://pythonhosted.org/openlmi-scripts-powermanagement>`_
-    * `openlmi-scripts-service <http://pythonhosted.org/openlmi-scripts-service>`_
-    * `openlmi-scripts-software <http://pythonhosted.org/openlmi-scripts-software>`_
-    * `openlmi-scripts-storage <http://pythonhosted.org/openlmi-scripts-storage>`_
-    * `openlmi-scripts-sssd <http://pythonhosted.org/openlmi-scripts-sssd>`_
-    * `openlmi-scripts-system <http://pythonhosted.org/openlmi-scripts-system>`_
+    * :ref:`openlmi-scripts-account-cmd`
+    * :ref:`openlmi-scripts-hardware-cmd`
+    * :ref:`openlmi-scripts-journald-cmd`
+    * :ref:`openlmi-scripts-locale-cmd`
+    * :ref:`openlmi-scripts-logicalfile-cmd`
+    * :ref:`openlmi-scripts-networking-cmd`
+    * :ref:`openlmi-scripts-powermanagement-cmd`
+    * :ref:`openlmi-scripts-realmd-cmd`
+    * :ref:`openlmi-scripts-service-cmd`
+    * :ref:`openlmi-scripts-software-cmd`
+    * :ref:`openlmi-scripts-sssd-cmd`
+    * :ref:`openlmi-scripts-storage-cmd`
+    * :ref:`openlmi-scripts-system-cmd`

@@ -154,7 +154,13 @@ install the most up to date versions.
 
 Documentation
 ~~~~~~~~~~~~~
-All the commands' documentation is available online:
+.. ifconfig:: with_commands
+
+    Check out documentation of currently implemented commands.
+
+.. ifconfig:: not with_commands
+
+    All the commands' documentation is available online:
 
 .. include:: commands.txt
 
