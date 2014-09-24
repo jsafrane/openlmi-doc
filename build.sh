@@ -6,7 +6,7 @@ set -e
 # Update the submodules to the latest HEAD
 for i in _ext/openlmi-providers _ext/openlmi-networking _ext/openlmi-storage _ext/openlmi-tools _ext/openlmi-scripts; do
     pushd $i
-    git pull
+#    git pull
     popd
 done
 
@@ -82,7 +82,7 @@ OPENLMI_SCRIPTS_DIR=$PWD/../openlmi-scripts WITH_COMMANDS=1 make deps-rtd index-
 popd
 
 # Copy docs to the right place
-rsync -av _ext/openlmi-tools/doc/src/* doc/openlmi-tools/ --exclude=Makefile --exclude="*.py" --exclude="*.skel" --exclude="*.sh"
+rsync -avL _ext/openlmi-tools/doc/src/* doc/openlmi-tools/ --exclude=Makefile --exclude="*.py" --exclude="*.skel" --exclude="*.sh"
 
 # install python sources
 export PYTHONPATH=$PWD/_build/python:$PWD/_build/python/lmi:$PYTHONPATH
