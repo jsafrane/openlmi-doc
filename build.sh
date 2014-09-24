@@ -6,7 +6,7 @@ set -e
 # Update the submodules to the latest HEAD
 for i in _ext/openlmi-providers _ext/openlmi-networking _ext/openlmi-storage _ext/openlmi-tools _ext/openlmi-scripts; do
     pushd $i
-#    git pull
+    git pull
     popd
 done
 
