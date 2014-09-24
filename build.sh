@@ -4,7 +4,7 @@
 set -e
 
 # Update the submodules to the latest HEAD
-for i in _ext/openlmi-providers _ext/openlmi-networking _ext/openlmi-storage; do
+for i in _ext/openlmi-providers _ext/openlmi-networking _ext/openlmi-storage _ext/openlmi-tools _ext/openlmi-scripts; do
     pushd $i
     git pull
     popd
@@ -75,8 +75,10 @@ rm -v _build/mof/*MethodParameters*
 #######################################################
 # openlmi-tools
 #######################################################
+ln -sf $PWD/_ext/openlmi-scripts doc/openlmi-scripts
+
 pushd _ext/openlmi-tools/doc/src
-make deps-rtd index-rtd
+OPENLMI_SCRIPTS_DIR=$PWD/../openlmi-scripts WITH_COMMANDS=1 make deps-rtd index-rtd
 popd
 
 # Copy docs to the right place

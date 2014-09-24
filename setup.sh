@@ -12,5 +12,6 @@ git clone https://git.fedorahosted.org/git/openlmi-networking.git
 git clone https://git.fedorahosted.org/git/openlmi-providers.git
 git clone https://git.fedorahosted.org/git/openlmi-storage.git
 git clone https://git.fedorahosted.org/git/openlmi-tools.git
+git clone https://github.com/openlmi/openlmi-scripts.git
 popd
 
