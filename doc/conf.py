@@ -15,8 +15,11 @@ import sys, os
 
 def setup(app):
     app.add_config_value('includeClasses', 'True', True)
+    # Register new option to include documentation for metacommand's commands
+    app.add_config_value('with_commands', False, True)
 
 includeClasses = False
+with_commands = True
 
 import sys
 from mock import Mock as MagicMock

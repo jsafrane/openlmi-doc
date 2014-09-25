@@ -12,7 +12,7 @@ Generated from version: ``[?1034h0.10.1``
 
 .. ifconfig:: with_commands
 
-    Scripts version: 
+    Scripts version: 0.3.0
 
 .. only:: html
 
@@ -22,3 +22,16 @@ Generated from version: ``[?1034h0.10.1``
     :maxdepth: 1
 
     scripts/common
+    ../scripts/commands/account/python
+    ../scripts/commands/hardware/python
+    ../scripts/commands/journald/python
+    ../scripts/commands/locale/python
+    ../scripts/commands/logicalfile/python
+    ../scripts/commands/networking/python
+    ../scripts/commands/powermanagement/python
+    ../scripts/commands/realmd/python
+    ../scripts/commands/service/python
+    ../scripts/commands/software/python
+    ../scripts/commands/sssd/python
+    ../scripts/commands/storage/python
+    ../scripts/commands/system/python
