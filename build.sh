@@ -70,7 +70,8 @@ cp -rv _ext/openlmi-storage/doc/admin/{*.rst,generated,pic} doc/openlmi-storage
 cp -v _ext/openlmi-storage/mof/LMI_Storage*.mof _build/mof/
 # Remove useless classes and instances
 rm -v _build/mof/*MethodParameters*
-
+# Remove classes.rst, we have class reference on the top level
+rm -v doc/openlmi-storage/classes.rst
 
 #######################################################
 # openlmi-tools
