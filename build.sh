@@ -74,9 +74,14 @@ rm -v _build/mof/*MethodParameters*
 rm -v doc/openlmi-storage/classes.rst
 
 #######################################################
+# openlmi-scripts - prep
+#######################################################
+# link it to openlmi-tools
+ln -sf $PWD/_ext/openlmi-scripts _ext/openlmi-tools/doc/
+
+#######################################################
 # openlmi-tools
 #######################################################
-ln -sf $PWD/_ext/openlmi-scripts _ext/openlmi-tools/doc/
 
 pushd _ext/openlmi-tools/doc/src
 OPENLMI_SCRIPTS_DIR=$PWD/../openlmi-scripts WITH_COMMANDS=1 make deps-rtd index-rtd
@@ -91,8 +96,23 @@ pushd _ext/openlmi-tools/cli
 make
 python setup.py install --root=../../../_build/python
 popd
+
+#######################################################
+# openlmi-scripts - cont.
+#######################################################
+pushd _ext/openlmi-scripts
+make setup-all
+for i in commands/*; do
+    if [ -d $i ]; then
+        pushd $i
+        python setup.py install --root=../../../../_build/python/
+        popd
+    fi
+done
+popd
+
 cp -vr _build/python/usr/lib/py*/site-packages/lmi doc/python
-touch doc/python/lmi/__init__.py doc/python/lmi/scripts/__init__.py
+#touch doc/python/lmi/__init__.py doc/python/lmi/scripts/__init__.py
 
 #######################################################
 # pywbem
