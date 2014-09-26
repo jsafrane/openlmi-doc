@@ -6,7 +6,7 @@ set -e
 # Update the submodules to the latest HEAD
 for i in _ext/openlmi-providers _ext/openlmi-networking _ext/openlmi-storage _ext/openlmi-tools _ext/openlmi-scripts; do
     pushd $i
-#    git pull
+    git pull
     popd
 done
 
@@ -127,7 +127,8 @@ pip -v install -I -t  doc/python/ --allow-external pywbem   pywbem || :
 #######################################################
 # Every provider is in its own subdirectory. We need to
 # update all links to images to add '../'
-find doc/ -name "*.rst" -exec sed -i -e 's!\(\:target\:.*\)_images!\1../_images!' {} \;
+find doc/openlmi-storage -name "*.rst" -exec sed -i -e 's!\(\:target\:.*\)_images!\1../_images!' {} \;
+find doc/openlmi-providers -name "*.rst" -exec sed -i -e 's!\(\:target\:.*\)_images!\1../../_images!' {} \;
 
 #######################################################
 # Generate it
