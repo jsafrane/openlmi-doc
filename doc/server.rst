@@ -17,6 +17,7 @@ Table of contents:
    openlmi-providers/fan/index
    openlmi-providers/hardware/index
    openlmi-providers/journald/index
+   openlmi-providers/locale/index
    openlmi-providers/logicalfile/index
    openlmi-providers/power/index
    openlmi-providers/realdm/index
