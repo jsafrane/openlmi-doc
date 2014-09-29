@@ -59,6 +59,7 @@ cp -v _ext/openlmi-networking/mof/60_LMI_Networking.mof _build/mof/
 # openlmi-storage
 #######################################################
 # Generate pictures
+export PATH=$PWD/_ext/openlmi-providers/tools:$PATH
 pushd _ext/openlmi-storage/doc/admin
 make generated figures
 popd
@@ -112,7 +113,7 @@ done
 popd
 
 cp -vr _build/python/usr/lib/py*/site-packages/lmi doc/python
-#touch doc/python/lmi/__init__.py doc/python/lmi/scripts/__init__.py
+touch doc/python/lmi/__init__.py doc/python/lmi/scripts/__init__.py
 
 #######################################################
 # pywbem
@@ -141,5 +142,5 @@ popd
 
 pushd doc
 rm -rf _build
-make html
+PYTHONPATH=python/:$PYTHONPATH make html
 popd
