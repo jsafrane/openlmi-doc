@@ -20,7 +20,7 @@ Table of contents:
    openlmi-providers/locale/index
    openlmi-providers/logicalfile/index
    openlmi-providers/power/index
-   openlmi-providers/realdm/index
+   openlmi-providers/realmd/index
    openlmi-providers/selinux/index
    openlmi-providers/service-dbus/index
    openlmi-providers/software/index
