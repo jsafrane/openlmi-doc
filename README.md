@@ -42,6 +42,7 @@ Following list was gathered using ``yum-builddeps *.spec`` on Fedora 21:
 * systemd-devel
 * openlmi-providers (for class2rst and mof files in /usr/share/mof)
 * python-IPy
+* openwsman-python
 
 Setup
 -----

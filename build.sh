@@ -84,6 +84,12 @@ ln -sf $PWD/_ext/openlmi-scripts _ext/openlmi-tools/doc/
 # openlmi-tools
 #######################################################
 
+pushd _ext/openlmi-tools/
+find . -name "*.skel" -exec touch {} \;
+touch doc/src/genapi.sh
+make setup
+popd
+
 pushd _ext/openlmi-tools/doc/src
 OPENLMI_SCRIPTS_DIR=$PWD/../openlmi-scripts WITH_COMMANDS=1 make deps-rtd index-rtd
 popd
