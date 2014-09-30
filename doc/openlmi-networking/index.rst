@@ -1,5 +1,5 @@
-OpenLMI Networking Provider documentation
-=========================================
+Networking Provider
+===================
 
 OpenLMI-Networking is CIM provider which manages local network devices.
 
@@ -10,8 +10,8 @@ This provider is based on following `DMTF <http://dmtf.org>`_ standards:
 
 The knowledge of these standards is not necessary, but it can help a lot.
 
-Application developers should first get familliar with :ref:`Networking API concepts <concepts>`
-and then look at :ref:`usage of OpenLMI-Networking <usage>`.
+Application developers should first get familliar with :ref:`Networking API concepts <network-concepts>`
+and then look at :ref:`usage of OpenLMI-Networking <network-usage>`.
 
 Content:
 

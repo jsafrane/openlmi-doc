@@ -1,4 +1,4 @@
-.. _dmtf-profiles:
+.. _hardware-dmtf-profiles:
 
 DMTF profiles
 =============

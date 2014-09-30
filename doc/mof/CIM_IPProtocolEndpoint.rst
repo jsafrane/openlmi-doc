@@ -55,7 +55,6 @@ Local properties
 
 ``string`` **Address**
 
-    **Deprecated!** 
     The IP address that this ProtocolEndpoint represents, formatted according to the appropriate convention as defined in the AddressType property of this class (e.g., 171.79.6.40). This single property is deprecated to replace it by specific IPv4 and v6 addresses.
 
     

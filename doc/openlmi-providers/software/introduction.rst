@@ -1,4 +1,4 @@
-.. _introduction:
+.. _software_introduction:
 
 Introduction
 ============
@@ -9,7 +9,7 @@ distributions. They provide the subset of its functionality.
 
 *RPM* database, repositories and the package manager itself are modeled with
 *CIM* classes according to several *DMTF* profiles described
-:ref:`later<dmtf_profiles>`. To make a query on database, install, update a
+:ref:`later<software_dmtf_profiles>`. To make a query on database, install, update a
 remove some *RPM* package means to trigger some operation on one or several
 *CIM* classes. This page explains the mapping of mentioned objects to
 corresponding classes.

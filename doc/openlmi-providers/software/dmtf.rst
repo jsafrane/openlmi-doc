@@ -1,4 +1,4 @@
-.. _dmtf_profiles:
+.. _software_dmtf_profiles:
 
 DMTF profiles
 =============
@@ -174,7 +174,7 @@ Class overview
     +-------------------------------------------------------------------------------+---------------------------------------------------------------------+------------------+
 
     .. seealso::
-        Class model in :ref:`introduction` where above classes are coloured blue.
+        Class model in :ref:`software_introduction` where above classes are coloured blue.
 
 .. _software_update_profile:
 
@@ -286,7 +286,7 @@ Class overview
     +-----------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+--------------------+
 
     .. seealso::
-        Class model in :ref:`introduction` where above classes are coloured blue.
+        Class model in :ref:`software_introduction` where above classes are coloured blue.
 
 ..
     ***************************************************************************

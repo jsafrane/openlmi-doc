@@ -3,7 +3,7 @@
 .. include:: shell-heading.txt
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     shell/startup
     shell/namespaces

@@ -982,6 +982,48 @@ Local methods
             
         
     
+    .. _LMI-StorageConfigurationService-LMI-ScsiScan:
+
+``uint32`` **LMI_ScsiScan** (:ref:`CIM_ConcreteJob <CIM-ConcreteJob>` Job)
+
+    This method requests that the system rescan SCSI devices for changes in their configuration. This method may also be used on a storage appliance to force rescanning of attached SCSI devices. 
+
+    
+
+    This operation can be disruptive.
+
+    
+
+    The method is LMI version of DMTF's ScsiScan(), just with '4096' as 'Method Parameters Checked - Job Started' return value. Also, the method parameters were trimmed, we may extend it to support complete DMTF ScsiScan parameters.
+
+    
+    ============ ========================================
+    ValueMap     Values                                  
+    ============ ========================================
+    0            Success                                 
+    1            Not Supported                           
+    2            Unknown                                 
+    3            Timeout                                 
+    4            Failed                                  
+    5            Invalid Parameter                       
+    6..4095      DMTF Reserved                           
+    4096         Method Parameters Checked - Job Started 
+    4097         Invalid Initiator                       
+    4098         No matching target found                
+    4099         No matching LUs found                   
+    4100         Prohibited by name binding configuration
+    ..           DMTF Reserved                           
+    32768..65535 Vendor Specific                         
+    ============ ========================================
+    
+    **Parameters**
+    
+        *OUT* :ref:`CIM_ConcreteJob <CIM-ConcreteJob>` **Job**
+            Reference to the job (may be null if job completed).
+
+            
+        
+    
 
 Inherited properties
 ^^^^^^^^^^^^^^^^^^^^

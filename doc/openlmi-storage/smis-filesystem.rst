@@ -45,7 +45,8 @@ Implemented SMI-S classes:
 .. Following line produces "WARNING: undefined label: lmi-logicalfile" in storage
    docs, but the links is useful in overall documentation.
 
-* :ref:`LMI_LogicalFile <LMI-LogicalFile>` using separate LogicalFile provider
+* :ref:`CIM_LogicalFile <CIM-LogicalFile>` using separate
+  :ref:`LogicalFile provider <logicalfile-index>`
   from OpenLMI-Providers package.
 
 Not implemented classes:

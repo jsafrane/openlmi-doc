@@ -18,6 +18,7 @@ MOFS=$(PROVIDERSDIR)/mof/05_LMI_Qualifiers.mof \
     $(PROVIDERSDIR)/mof/60_LMI_Realmd.mof \
     $(PROVIDERSDIR)/mof/60_LMI_SSSD.mof \
     $(PROVIDERSDIR)/mof/60_LMI_Service.mof \
+    $(PROVIDERSDIR)/mof/60_LMI_SELinux.mof \
     $(PROVIDERSDIR)/build/mof/60_LMI_Software.mof \
     $(STORAGEDIR)/mof/LMI_Storage-Base.mof \
     $(STORAGEDIR)/mof/LMI_Storage-Luks.mof \

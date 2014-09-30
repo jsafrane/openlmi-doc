@@ -93,6 +93,7 @@ to create LUKS format, open it and create ext3 filesystem on it::
     connection = connect("remote.host.org", "root", "opensesame")
     ns = connection.root.cimv2  # ns as NameSpace
     encryption_service = ns.LMI_ExtentEncryptionConfigurationService.first_instance()
+    filesystem_service = ns.LMI_FileSystemConfigurationService.first_instance()
 
     # Find the /dev/sda1 device
     sda1 = ns.CIM_StorageExtent.first_instance({"Name": "/dev/sdb1"})
@@ -125,6 +126,7 @@ can be used to destroy the clear-text device so only encrypted data is available
 The clear-text device must be unmounted first!
 
 ::
+
     # Connect to the remote system and prepare some local variables
     connection = connect("remote.host.org", "root", "opensesame")
     ns = connection.root.cimv2  # ns as NameSpace

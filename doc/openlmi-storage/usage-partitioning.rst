@@ -194,7 +194,6 @@ location::
     # Connect to the remote system and prepare some local variables
     connection = connect("remote.host.org", "root", "opensesame")
     ns = connection.root.cimv2  # ns as NameSpace
-    partitioning_service = ns.LMI_DiskPartitionConfigurationService.first_instance()
 
     # Find the disk
     sda = ns.LMI_StorageExtent.first_instance({"Name": "/dev/sda"})
@@ -215,7 +214,6 @@ we can find size of the largest partition that can be created on ``/dev/sda``::
     # Connect to the remote system and prepare some local variables
     connection = connect("remote.host.org", "root", "opensesame")
     ns = connection.root.cimv2  # ns as NameSpace
-    partitioning_service = ns.LMI_DiskPartitionConfigurationService.first_instance()
 
     # Find the disk
     sda = ns.LMI_StorageExtent.first_instance({"Name": "/dev/sda"})

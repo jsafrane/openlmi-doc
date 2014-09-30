@@ -48,7 +48,8 @@ Inheritance tree
 |  └── :ref:`LMI_AffectedJobElement <LMI-AffectedJobElement>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_AffectedSoftwareJobElement <LMI-AffectedSoftwareJobElement>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_AffectedStorageJobElement <LMI-AffectedStorageJobElement>`
-|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_AffectedNetworkJobElement <LMI-AffectedNetworkJobElement>`
+|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_AffectedNetworkJobElement <LMI-AffectedNetworkJobElement>`
+|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_AffectedSELinuxJobElement <LMI-AffectedSELinuxJobElement>`
 |   
 |  :ref:`CIM_AssignedIdentity <CIM-AssignedIdentity>`
 |  ├── :ref:`LMI_AssignedGroupIdentity <LMI-AssignedGroupIdentity>`
@@ -60,11 +61,13 @@ Inheritance tree
 |  :ref:`CIM_AssociatedJobMethodResult <CIM-AssociatedJobMethodResult>`
 |  └── :ref:`LMI_AssociatedJobMethodResult <LMI-AssociatedJobMethodResult>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_AssociatedSoftwareJobMethodResult <LMI-AssociatedSoftwareJobMethodResult>`
+|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_AssociatedSELinuxJobMethodResult <LMI-AssociatedSELinuxJobMethodResult>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_AssociatedStorageJobMethodResult <LMI-AssociatedStorageJobMethodResult>`
 |   
 |  :ref:`CIM_Dependency <CIM-Dependency>`
 |  ├── :ref:`CIM_RemoteAccessAvailableToElement <CIM-RemoteAccessAvailableToElement>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_NetworkRemoteAccessAvailableToElement <LMI-NetworkRemoteAccessAvailableToElement>`
+|  ├── :ref:`LMI_SELinuxServiceHasElement <LMI-SELinuxServiceHasElement>`
 |  ├── :ref:`CIM_AbstractBasedOn <CIM-AbstractBasedOn>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`CIM_BasedOn <CIM-BasedOn>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_MDRAIDBasedOn <LMI-MDRAIDBasedOn>`
@@ -129,8 +132,9 @@ Inheritance tree
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_HostedStorageService <LMI-HostedStorageService>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_HostedAccountManagementService <LMI-HostedAccountManagementService>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_HostedSoftwareInstallationService <LMI-HostedSoftwareInstallationService>`
-|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_HostedPowerManagementService <LMI-HostedPowerManagementService>`
-|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_HostedRealmdService <LMI-HostedRealmdService>`
+|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_HostedSELinuxService <LMI-HostedSELinuxService>`
+|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_HostedRealmdService <LMI-HostedRealmdService>`
+|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_HostedPowerManagementService <LMI-HostedPowerManagementService>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`CIM_HostedCollection <CIM-HostedCollection>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_HostedSoftwareCollection <LMI-HostedSoftwareCollection>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_HostedStorageStatisticsCollection <LMI-HostedStorageStatisticsCollection>`
@@ -171,15 +175,18 @@ Inheritance tree
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_NetworkInstModification <LMI-NetworkInstModification>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_ServiceInstanceModificationIndication <LMI-ServiceInstanceModificationIndication>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SoftwareInstModification <LMI-SoftwareInstModification>`
+|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SELinuxInstModification <LMI-SELinuxInstModification>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_StorageInstModification <LMI-StorageInstModification>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`CIM_InstCreation <CIM-InstCreation>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SoftwareInstCreation <LMI-SoftwareInstCreation>`
+|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_JournalLogRecordInstanceCreationIndication <LMI-JournalLogRecordInstanceCreationIndication>`
+|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SELinuxInstCreation <LMI-SELinuxInstCreation>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_AccountInstanceCreationIndication <LMI-AccountInstanceCreationIndication>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_StorageInstCreation <LMI-StorageInstCreation>`
-|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_JournalLogRecordInstanceCreationIndication <LMI-JournalLogRecordInstanceCreationIndication>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_NetworkInstCreation <LMI-NetworkInstCreation>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`CIM_InstMethodCall <CIM-InstMethodCall>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`CIM_InstDeletion <CIM-InstDeletion>`
+|   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SELinuxInstDeletion <LMI-SELinuxInstDeletion>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SoftwareInstDeletion <LMI-SoftwareInstDeletion>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_NetworkInstDeletion <LMI-NetworkInstDeletion>`
 |   |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_AccountInstanceDeletionIndication <LMI-AccountInstanceDeletionIndication>`
@@ -233,6 +240,7 @@ Inheritance tree
 |  ├── :ref:`LMI_SSSDProvider <LMI-SSSDProvider>`
 |  ├── :ref:`CIM_MethodResult <CIM-MethodResult>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_MethodResult <LMI-MethodResult>`
+|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SELinuxMethodResult <LMI-SELinuxMethodResult>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SoftwareMethodResult <LMI-SoftwareMethodResult>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_StorageMethodResult <LMI-StorageMethodResult>`
 |  ├── :ref:`CIM_Check <CIM-Check>`
@@ -322,6 +330,7 @@ Inheritance tree
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`CIM_PowerManagementService <CIM-PowerManagementService>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_PowerManagementService <LMI-PowerManagementService>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_MountConfigurationService <LMI-MountConfigurationService>`
+|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SELinuxService <LMI-SELinuxService>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_ExtentEncryptionConfigurationService <LMI-ExtentEncryptionConfigurationService>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`CIM_LogicalDevice <CIM-LogicalDevice>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`CIM_UserDevice <CIM-UserDevice>`
@@ -412,6 +421,7 @@ Inheritance tree
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SoftwareJob <LMI-SoftwareJob>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SoftwareInstallationJob <LMI-SoftwareInstallationJob>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_SoftwareVerificationJob <LMI-SoftwareVerificationJob>`
+|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SELinuxJob <LMI-SELinuxJob>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_StorageJob <LMI-StorageJob>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`CIM_PhysicalElement <CIM-PhysicalElement>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`CIM_PhysicalPackage <CIM-PhysicalPackage>`
@@ -433,6 +443,9 @@ Inheritance tree
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SystemSlot <LMI-SystemSlot>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_MemorySlot <LMI-MemorySlot>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_PortPhysicalConnector <LMI-PortPhysicalConnector>`
+|  ├── :ref:`LMI_SELinuxElement <LMI-SELinuxElement>`
+|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`LMI_SELinuxBoolean <LMI-SELinuxBoolean>`
+|  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_SELinuxPort <LMI-SELinuxPort>`
 |  ├── :ref:`CIM_Collection <CIM-Collection>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| ├── :ref:`CIM_Group <CIM-Group>`
 |  │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| │ |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp|  |nbsp| └── :ref:`LMI_Group <LMI-Group>`

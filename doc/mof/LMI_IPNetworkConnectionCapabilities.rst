@@ -49,6 +49,18 @@ Local methods
     For types ``4 - Bonding`` and ``5 - Bridging`` the associated IPNetworkConnection will be enslaved by created SettingData(meaning that LMI_CreateSlaveSetting will be automatically called).
 
     
+    ======== =========================
+    ValueMap Values                   
+    ======== =========================
+    0        No Error                 
+    1        Unknown Error            
+    2        Timeout                  
+    3        Wrong Parameter          
+    4        Memory Allocation Failure
+    5        Backend Error            
+    6        Not Implemented          
+    ======== =========================
+    
     **Parameters**
     
         *IN* ``string`` **Caption**

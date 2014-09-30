@@ -121,7 +121,6 @@ Local properties
 
 ``string[]`` **TypeDescriptions**
 
-    **Deprecated!** 
     The use of this property is deprecated in lieu of a single value property, ChassisTypeDescription. 
 
     An array of free-form strings providing more information on the ChassisTypes array entries. Note, each entry of this array is related to the entry in ChassisTypes that is located at the same index.
@@ -167,7 +166,6 @@ Local properties
 
 ``uint16[]`` **ChassisTypes**
 
-    **Deprecated!** 
     The use of this property is deprecated in lieu of ChassisPackageType. A physical package should not have multiple form factors. Therefore, this property is being deprecated in lieu of a single value property. 
 
     An enumerated, integer-valued array indicating the type of Chassis.

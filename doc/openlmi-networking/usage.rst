@@ -1,7 +1,7 @@
-.. _usage:
+.. _network-usage:
 
-OpenLMI-Networking usage
-========================
+Usage
+=====
 
 All example scripts are for ``lmishell``. See it's documentation_ on OpenLMI_
 page.
@@ -32,7 +32,7 @@ Get parameters of network devices
 Obtaining parameters of network device might be a little bit tricky.
 DMTF standards split network device to three classes and one might need
 to traverse between them through associations, see
-:ref:`Networking API concepts <hardware>`.
+:ref:`Networking API concepts <network-hardware>`.
 
 Following example prints name, its status, MAC address, link technology and
 maximal speed for each device.

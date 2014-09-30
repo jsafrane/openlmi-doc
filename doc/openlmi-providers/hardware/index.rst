@@ -5,7 +5,7 @@ OpenLMI Hardware is CIM provider which can provide hardware information.
 
 The provider is partially implementing DMTF Computer System Profile with
 addition of multiple hardware related profiles. For more information see
-:ref:`DMTF profiles <dmtf-profiles>`.
+:ref:`DMTF profiles <hardware-dmtf-profiles>`.
 
 Contents:
 

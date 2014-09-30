@@ -8,7 +8,7 @@ everything under :py:mod:`lmi.scripts` namespace.
 development. Various scripts share this directory in order to provide
 command-line interface through *LMI metacommand*.
 
-Generated from version: ``[?1034h0.10.1``
+Generated from version: ``0.0.0``
 
 .. ifconfig:: with_commands
 

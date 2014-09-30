@@ -1,4 +1,4 @@
-.. _concepts:
+.. _network-concepts:
 
 Networking API concepts
 =======================
@@ -10,7 +10,7 @@ and call their intrinsic and extrinsic methods.
 Hardware representation
 -----------------------
 
-.. _hardware:
+.. _network-hardware:
 
 There is instance of subclass of :ref:`CIM_NetworkPort<CIM-NetworkPort>`
 for each physical network device present in the system, e.g.

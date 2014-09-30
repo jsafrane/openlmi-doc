@@ -1,3 +1,5 @@
+.. _logicalfile-index:
+
 LogicalFile Provider
 ====================
 

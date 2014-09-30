@@ -1,6 +1,3 @@
-.. _concepts:
-.. _usage:
-
 Usage
 =====
 

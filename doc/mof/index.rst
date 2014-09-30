@@ -209,6 +209,7 @@ Class reference
 * :ref:`LMI_AccountSettingData <LMI-AccountSettingData>`
 * :ref:`LMI_AffectedJobElement <LMI-AffectedJobElement>`
 * :ref:`LMI_AffectedNetworkJobElement <LMI-AffectedNetworkJobElement>`
+* :ref:`LMI_AffectedSELinuxJobElement <LMI-AffectedSELinuxJobElement>`
 * :ref:`LMI_AffectedSoftwareJobElement <LMI-AffectedSoftwareJobElement>`
 * :ref:`LMI_AffectedStorageJobElement <LMI-AffectedStorageJobElement>`
 * :ref:`LMI_AssignedAccountIdentity <LMI-AssignedAccountIdentity>`
@@ -217,6 +218,7 @@ Class reference
 * :ref:`LMI_AssociatedJobMethodResult <LMI-AssociatedJobMethodResult>`
 * :ref:`LMI_AssociatedPowerManagementService <LMI-AssociatedPowerManagementService>`
 * :ref:`LMI_AssociatedProcessorCacheMemory <LMI-AssociatedProcessorCacheMemory>`
+* :ref:`LMI_AssociatedSELinuxJobMethodResult <LMI-AssociatedSELinuxJobMethodResult>`
 * :ref:`LMI_AssociatedSoftwareInstallationServiceCapabilities <LMI-AssociatedSoftwareInstallationServiceCapabilities>`
 * :ref:`LMI_AssociatedSoftwareJobMethodResult <LMI-AssociatedSoftwareJobMethodResult>`
 * :ref:`LMI_AssociatedStorageJobMethodResult <LMI-AssociatedStorageJobMethodResult>`
@@ -293,6 +295,7 @@ Class reference
 * :ref:`LMI_HostedMount <LMI-HostedMount>`
 * :ref:`LMI_HostedPowerManagementService <LMI-HostedPowerManagementService>`
 * :ref:`LMI_HostedRealmdService <LMI-HostedRealmdService>`
+* :ref:`LMI_HostedSELinuxService <LMI-HostedSELinuxService>`
 * :ref:`LMI_HostedSSSDService <LMI-HostedSSSDService>`
 * :ref:`LMI_HostedSoftwareCollection <LMI-HostedSoftwareCollection>`
 * :ref:`LMI_HostedSoftwareIdentityResource <LMI-HostedSoftwareIdentityResource>`
@@ -410,6 +413,16 @@ Class reference
 * :ref:`LMI_ResourceForSoftwareIdentity <LMI-ResourceForSoftwareIdentity>`
 * :ref:`LMI_RootDirectory <LMI-RootDirectory>`
 * :ref:`LMI_RouteUsesEndpoint <LMI-RouteUsesEndpoint>`
+* :ref:`LMI_SELinuxBoolean <LMI-SELinuxBoolean>`
+* :ref:`LMI_SELinuxElement <LMI-SELinuxElement>`
+* :ref:`LMI_SELinuxInstCreation <LMI-SELinuxInstCreation>`
+* :ref:`LMI_SELinuxInstDeletion <LMI-SELinuxInstDeletion>`
+* :ref:`LMI_SELinuxInstModification <LMI-SELinuxInstModification>`
+* :ref:`LMI_SELinuxJob <LMI-SELinuxJob>`
+* :ref:`LMI_SELinuxMethodResult <LMI-SELinuxMethodResult>`
+* :ref:`LMI_SELinuxPort <LMI-SELinuxPort>`
+* :ref:`LMI_SELinuxService <LMI-SELinuxService>`
+* :ref:`LMI_SELinuxServiceHasElement <LMI-SELinuxServiceHasElement>`
 * :ref:`LMI_SSSDAvailableComponent <LMI-SSSDAvailableComponent>`
 * :ref:`LMI_SSSDAvailableDomain <LMI-SSSDAvailableDomain>`
 * :ref:`LMI_SSSDBackend <LMI-SSSDBackend>`

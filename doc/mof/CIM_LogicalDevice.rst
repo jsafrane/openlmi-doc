@@ -46,6 +46,7 @@ Local properties
 
 ``boolean`` **ErrorCleared**
 
+    **Deprecated!** 
     Note: The use of this method is deprecated. 
 
     Deprecated description: ErrorCleared is a Boolean property that indicates that the error reported in LastErrorCode is now cleared.
@@ -78,7 +79,6 @@ Local properties
 
 ``uint64`` **PowerOnHours**
 
-    **Deprecated!** 
     Note: The use of this method is deprecated. 
 
     Deprecated description: The number of consecutive hours that this Device has been powered on since its last power cycle.
@@ -121,7 +121,6 @@ Local properties
 
 ``uint16`` **StatusInfo**
 
-    **Deprecated!** 
     Note: The use of this method is deprecated in lieu of a more clearly named property (EnabledState) that is inherited from ManagedSystemElement and that has additional enumerated values. 
 
     Deprecated description: The StatusInfo property indicates whether the Logical Device is in an enabled state (value=3), disabled state (value=4), some other state (value=1), or an unknown state (value=2). If this property does not apply to the LogicalDevice, the value 5 ("Not Applicable") should be used. If a Device is ("Enabled")(value=3), it has been powered up and is configured and operational. The Device might or might not be functionally active, depending on whether its Availability (or AdditionalAvailability) indicates that it is ("Running/Full Power")(value=3) or ("Off line") (value=8). In an enabled but offline mode, a Device might be performing out-of-band requests, such as running Diagnostics. If StatusInfo is ("Disabled") (value=4), a Device can only be "enabled" or powered off. In a personal computer environment, ("Disabled") means that the driver of the device is not available in the stack. In other environments, a Device can be disabled by removing its configuration file. A disabled device is physically present in a System and consuming resources, but it cannot be communicated with until a driver is loaded, a configuration file is loaded, or some other "enabling" activity has occurred.
@@ -179,7 +178,6 @@ Local properties
 
 ``uint64`` **TotalPowerOnHours**
 
-    **Deprecated!** 
     Note: The use of this method is deprecated. 
 
     Deprecated description: The total number of hours that this Device has been powered on.
@@ -189,6 +187,7 @@ Local properties
 
 ``string`` **ErrorDescription**
 
+    **Deprecated!** 
     Note: The use of this method is deprecated. 
 
     Deprecated description: ErrorDescription is a free-form string that supplies more information about the error recorded in LastErrorCode and information on any corrective actions that can be taken.
@@ -323,6 +322,7 @@ Local methods
 
 ``uint32`` **EnableDevice** (``boolean`` Enabled)
 
+    **Deprecated!** 
     Note: The use of this method has been deprecated in lieu of the more general RequestStateChange method that directly overlaps with the functionality provided by this method. 
 
     Deprecated description: Requests that the LogicalDevice be enabled ("Enabled" input parameter=TRUE) or disabled (=FALSE). If successful, the StatusInfo or EnabledState properties of the Device should reflect the desired state (enabled or disabled). Note that this function overlaps with the RequestedState property. RequestedState was added to the model to maintain a record (for example, a persisted value) of the last state request. Invoking the EnableDevice method should set the RequestedState property appropriately. 
@@ -342,7 +342,6 @@ Local methods
 
 ``uint32`` **OnlineDevice** (``boolean`` Online)
 
-    **Deprecated!** 
     Note: The use of this method has been deprecated in lieu of the more general RequestStateChange method that directly overlaps with the functionality provided by this method. 
 
     Deprecated description: Requests that the LogicalDevice be brought online ("Online" input parameter=TRUE) or taken offline (=FALSE). "Online" indicates that the Device is ready to accept requests, and is operational and fully functioning. In this case, the Availability property of the Device would be set to a value of 3 ("Running/Full Power"). "Offline" indicates that a Device is powered on and operational, but is not processing functional requests. In an offline state, a Device might be capable of running diagnostics or generating operational alerts. For example, when the "Offline" button is pushed on a Printer, the Device is no longer available to process print jobs, but it could be available for diagnostics or maintenance. 

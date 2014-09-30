@@ -303,7 +303,6 @@ Following code lists all PVs of ``/dev/myGroup``::
     # Connect to the remote system and prepare some local variables
     connection = connect("remote.host.org", "root", "opensesame")
     ns = connection.root.cimv2  # ns as NameSpace
-    storage_service = ns.LMI_StorageConfigurationService.first_instance()
 
     # Find the VG
     vg = ns.LMI_VGStoragePool.first_instance({"Name": "/dev/mapper/myGroup"})
